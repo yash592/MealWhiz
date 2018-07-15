@@ -4,7 +4,7 @@ import LoginForm from './components/LoginForm';
 
 const RouterComponent = () => {
 	return (
-		<Router sceneStyle={{ paddingTop: 45 }}>
+		<Router sceneStyle={{ paddingTop: 15 }}>
 			<Scene key='root' hideNavBar>
 				<Scene key='auth'>
 					<Scene key='login' component={LoginForm} title='MealWhiz authentication' initial />
