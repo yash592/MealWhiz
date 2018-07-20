@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, loginUser } from '../actions';
 import { Card, CardSection, Input, Button, Spinner } from './common';
@@ -53,6 +53,12 @@ class LoginForm extends Component {
 	render() {
 		return (
 			<Card>
+				<View>
+					<Image
+						style={{ height: 400, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'  }}
+						source={{uri: 'https://i.imgur.com/iI82lAH.png'}}
+					/>
+				</View>
 				<CardSection>
 					<Input
 						label='Email'
