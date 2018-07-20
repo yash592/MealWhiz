@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, KeyboardAvoidingView } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, loginUser } from '../actions';
 import { Card, CardSection, Input, Button, Spinner } from './common';
@@ -52,6 +53,12 @@ class LoginForm extends Component {
 
 	render() {
 		return (
+			<KeyboardAwareScrollView
+			      style={{ backgroundColor: '#fff' }}
+			      resetScrollToCoords={{ x: 0, y: 0 }}
+			      contentContainerStyle={styles.container}
+			      scrollEnabled={false}
+		    >
 			<Card>
 				<View>
 					<Image
@@ -83,8 +90,8 @@ class LoginForm extends Component {
 				<CardSection>					
 					{this.renderLoginButton()}
 				</CardSection>
-
 			</Card>
+			</KeyboardAwareScrollView>
 		);
 	};
 }
