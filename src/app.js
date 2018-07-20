@@ -5,6 +5,7 @@ import firebase from 'firebase';
 import { createStore, applyMiddleware } from 'redux';
 import reducers from './reducers';
 import LoginForm from './components/LoginForm';
+import FetchRecipes from './components/FetchRecipes';
 import ReduxThunk from 'redux-thunk';
 
 
@@ -30,7 +31,7 @@ class App extends Component {
 			return (
 
 				<Provider store={store}>
-					<LoginForm />
+					<FetchRecipes />
 				</Provider>
 
 				);
