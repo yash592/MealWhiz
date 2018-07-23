@@ -1,14 +1,16 @@
 import { FETCH_RECIPE } from '../actions/types'; 
 
+const initialState = []
 
-const INITIAL_STATE = {
-	results: ''
-};
 
-export default (state = INITIAL_STATE, action) => {
+
+
+
+export default (state = initialState, action) => {
+	console.log(action)
 	switch (action.type) {
 		case FETCH_RECIPE:
-			return {...state, results: action.payload.data };
+			return [...state, action.payload]
 	default:
 		return state;
 	}

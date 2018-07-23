@@ -1,26 +1,39 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { fetchRecipes } from '../actions';
+import axios from 'axios';
 
-class mealContainer extends Component {
+class FetchRecipes extends Component {
 
 	componentDidMount() {
 		console.log("Got to mealContainer")
-		console.log(this.props.recipes);
+		this.props.fetchRecipes;
+		
 	}
 
 	render() {
 		return (
-			<Text>Meal page is here</Text>
-		)
+			
+			console.log(this.props)			
+		);
 	}
 }
 
-const mapStateToProps = state => {
+// const mapStateToProps = state => {
+// 	return {
+// 		recipes: state.recipe.recipes
+		
+// 	}
+// }
+
+const mapDispatchToProps = dispatch => {
 	return {
-		recipes: state.recipe.results
-	}
+		fetchData: fetchRecipes()
+	};
 }
 
-export default connect(mapStateToProps, { fetchRecipes })(mealContainer);
+
+
+export default connect( mapDispatchToProps)(FetchRecipes);
