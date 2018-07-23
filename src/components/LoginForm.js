@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image, KeyboardAvoidingView } from 'react-native';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+// import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, loginUser } from '../actions';
 import { Card, CardSection, Input, Button, Spinner } from './common';
@@ -53,7 +53,7 @@ class LoginForm extends Component {
 
 	render() {
 		return (
-			<KeyboardAwareScrollView
+			<View
 			      style={{ backgroundColor: '#fff' }}
 			      resetScrollToCoords={{ x: 0, y: 0 }}
 			      contentContainerStyle={styles.container}
@@ -91,7 +91,7 @@ class LoginForm extends Component {
 					{this.renderLoginButton()}
 				</CardSection>
 			</Card>
-			</KeyboardAwareScrollView>
+			</View>
 		);
 	};
 }
