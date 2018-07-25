@@ -7,33 +7,32 @@ import axios from 'axios';
 
 class FetchRecipes extends Component {
 
-	componentDidMount() {
+	componentWillMount() {
+		
+		this.props.fetchRecipes();
 		console.log("Got to mealContainer")
-		this.props.fetchRecipes;
 		
 	}
 
 	render() {
+		console.log(this.props.recipes)	
 		return (
-			
-			console.log(this.props)			
+
+		<Text> Yeah, bitch!! </Text>		
+				
 		);
 	}
 }
 
-// const mapStateToProps = state => {
-// 	return {
-// 		recipes: state.recipe.recipes
-		
-// 	}
-// }
-
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = state => {
+	console.log(state)
 	return {
-		fetchData: fetchRecipes()
+		recipes: state.recipe.meals		
 	};
-}
+};
 
 
 
-export default connect( mapDispatchToProps)(FetchRecipes);
+
+
+export default connect( mapStateToProps, { fetchRecipes })(FetchRecipes);
