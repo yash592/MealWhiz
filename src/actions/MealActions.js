@@ -2,17 +2,16 @@ import axios from 'axios';
 import { FETCH_RECIPE } from './types';
 
 export const fetchRecipes = () => {
-	console.log('fetch recipes')
-	return(dispatch) => {
+	console.log('Got to mealActions')
+	return (dispatch) => {
 		return axios.get('http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3')
-		    .then(recipes => {
+		    .then(response => {
+		    	console.log(response);
 				dispatch({
 					type: FETCH_RECIPE,
-					payload: recipes
+					payload: response
 				})
 			})
 
 	}
-	
-
 }
