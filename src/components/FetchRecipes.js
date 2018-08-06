@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import _ from 'lodash';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -10,25 +11,39 @@ class FetchRecipes extends Component {
 	componentWillMount() {
 		
 		this.props.fetchRecipes();
-		console.log("Got to mealContainer")
+		// console.log("Got to mealContainer")
 		
 	}
 
-	render() {
-		console.log(this.props.recipes)	
+	// createDataSource({ recipes }) {
+	// 	const ds = new ListView.DataSource({
+	// 		rowHasChanged: (r1, r2) => r1 != r2
+	// 	})
+
+	// 	this.dataSource = ds.cloneWithRows(recipes);
+	// 	console.log(this.dataSource)
+	// }
+
+
+
+		render() {
+		console.log("Props", this.props.recipes);
+		// this.createDataSource();	
 		return (
 
-		<Text> Yeah, bitch!! </Text>		
+		<Text>Hi</Text>		
 				
-		);
+		)
 	}
 }
 
+
 const mapStateToProps = state => {
 	console.log(state)
-	return {
-		recipes: state.recipe.meals		
-	};
+	const recipes = _.map(state.recipe.meals, (title) => {
+		return { title }
+	})
+	return {recipes}
 };
 
 

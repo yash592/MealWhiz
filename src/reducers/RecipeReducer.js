@@ -9,7 +9,7 @@ export default (state = initialState, action) => {
 	// console.log(action)
 	switch (action.type) {
 		case FETCH_RECIPE:
-			console.log('from reducer')
+			// console.log('from reducer')
 			return { ...state, meals: action.payload };
 			console.log(initialState.meals)
 	default:
