@@ -36,7 +36,9 @@ class FetchRecipes extends Component {
 
 	renderRow(recipe) {	
 		console.log(recipe)
-  		return <ListItem recipe={recipe} />
+  		return <ListItem
+  				 recipe={recipe}
+  				 image={recipe} />
   	}
 
 
