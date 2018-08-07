@@ -6,7 +6,7 @@ export const fetchRecipes = () => {
 	return (dispatch) => {
 		return axios.get('http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3')
 		    .then(response => {
-		    	console.log(response);
+		    	console.log("API response" , response);
 				dispatch({
 					type: FETCH_RECIPE,
 					payload: response.data.results

@@ -4,25 +4,40 @@ import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchRecipes } from '../actions';
+import { ListView } from 'react-native';
 import axios from 'axios';
+import ListItem from './ListItem';
 
 class FetchRecipes extends Component {
 
 	componentWillMount() {
 		
 		this.props.fetchRecipes();
-		// console.log("Got to mealContainer")
+		// console.log("Got to mealContainer");
+		this.createDataSource(this.props);
 		
 	}
 
-	// createDataSource({ recipes }) {
-	// 	const ds = new ListView.DataSource({
-	// 		rowHasChanged: (r1, r2) => r1 != r2
-	// 	})
+	componentWillReceiveProps(nextProps) {
+		console.log("nextProps", nextProps);
+		this.createDataSource(nextProps);
+	}
 
-	// 	this.dataSource = ds.cloneWithRows(recipes);
-	// 	console.log(this.dataSource)
-	// }
+	createDataSource({ recipes }) {
+		// console.log(this.props.recipes)
+		const ds = new ListView.DataSource({
+			rowHasChanged: (r1, r2) => r1 != r2
+		})
+
+		this.dataSource = ds.cloneWithRows(recipes);
+		console.log("Datasource", recipes)
+	}
+
+
+	renderRow(recipe) {	
+		console.log(recipe)
+  		return <ListItem recipe={recipe} />
+  	}
 
 
 
@@ -30,10 +45,13 @@ class FetchRecipes extends Component {
 		console.log("Props", this.props.recipes);
 		// this.createDataSource();	
 		return (
-
-		<Text>Hi</Text>		
+			<ListView
+				enableEmptySections 
+				dataSource={this.dataSource}
+				renderRow={this.renderRow}
+			 />	
 				
-		)
+		);
 	}
 }
 
@@ -43,7 +61,7 @@ const mapStateToProps = state => {
 	const recipes = _.map(state.recipe.meals, (title) => {
 		return { title }
 	})
-	return {recipes}
+	return { recipes }
 };
 
 
