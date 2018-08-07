@@ -1,8 +1,6 @@
 import { FETCH_RECIPE } from '../actions/types'; 
 
-const initialState = {
-	meals: ''
-}
+const initialState = {}
 
 
 export default (state = initialState, action) => {
@@ -10,7 +8,7 @@ export default (state = initialState, action) => {
 	switch (action.type) {
 		case FETCH_RECIPE:
 			// console.log('from reducer')
-			return { ...state, meals: action.payload };
+			return action.payload;
 			console.log(initialState.meals)
 	default:
 		return state;

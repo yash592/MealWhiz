@@ -58,8 +58,8 @@ class FetchRecipes extends Component {
 
 const mapStateToProps = state => {
 	console.log(state)
-	const recipes = _.map(state.recipe.meals, (title) => {
-		return { title }
+	const recipes = _.map(state.recipe, (meals) => {
+		return { ... meals }
 	})
 	return { recipes }
 };
