@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, TouchableWithoutFeedback, View, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { CardSection } from './common';
+import { Tile } from 'react-native-elements';
 
 
 
@@ -16,16 +17,12 @@ class ListItem extends Component {
 		console.log("Thumbnail", thumbnail);
 		return (
 			<TouchableWithoutFeedback>
-				<View>
+				<View>					
 					<CardSection>
-						<Text style={styles.titleStyle}>
-							{title}
-						</Text>						
-					</CardSection>
-					<CardSection>
-					<Image
+					<Tile
 							style={styles.imgStyle}
-							source={{uri: thumbnail}} />
+							imageSrc={{uri: thumbnail}}
+							title={title} />
 					</CardSection>
 				</View>
 			</TouchableWithoutFeedback>

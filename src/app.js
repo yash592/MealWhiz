@@ -31,7 +31,7 @@ class App extends Component {
 			return (
 
 				<Provider store={store}>
-					<FetchRecipes />
+					<Router />
 				</Provider>
 
 				);

@@ -63,7 +63,7 @@ class LoginForm extends Component {
 				<View>
 					<Image
 						style={{ width: '100%', height: 400, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: 90  }}
-						source={{uri: 'https://i.imgur.com/Yc105Br.png'}}
+						source={{uri: ''}}
 					/>
 				</View>
 				<CardSection>
