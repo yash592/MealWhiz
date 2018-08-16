@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { FETCH_RECIPE, SEARCHTERM_CHANGE } from './types';
+import { Actions } from 'react-native-router-flux';
+
 
 export const searchTermChange = (text) => {
 	console.log(text)
@@ -9,10 +11,12 @@ export const searchTermChange = (text) => {
 	};
 };
 
-export const fetchRecipes = (recipeSearchTerm) => {
-	console.log('Got to mealActions', recipeSearchTerm)
+export const fetchRecipes = ({ recipeSearchTerm }) => {
+	console.log('Got to mealActions', recipeSearchTerm);
+	const url = 'http://www.recipepuppy.com/api/?q=' + recipeSearchTerm + '&p=3';
+	console.log(url)
 	return (dispatch) => {
-		return axios.get('http://www.recipepuppy.com/api/?q=' + recipeSearchTerm + '&p=3')
+		return axios.get(url)
 		    .then(response => {
 		    	console.log(response);
 				dispatch({
@@ -20,7 +24,11 @@ export const fetchRecipes = (recipeSearchTerm) => {
 					payload: response.data.results
 
 				})
+
+				Actions.FetchRecipes();
 			})
 
 	}
+
+	
 }

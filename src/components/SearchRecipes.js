@@ -8,11 +8,6 @@ import { fetchRecipes, searchTermChange } from '../actions';
 
 class SearchRecipes extends Component {
 
-	componentWillMount () {
-
-		console.log("In Search Recipe component");
-
-	}
 
 	recipeSearchTerm(text) {
 		this.props.searchTermChange(text)
