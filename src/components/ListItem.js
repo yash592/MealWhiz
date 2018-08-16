@@ -21,7 +21,7 @@ class ListItem extends Component {
 					<CardSection>
 					<Tile
 							style={styles.imgStyle}
-							imageSrc={{uri: thumbnail}}
+							imageSrc={{uri: thumbnail ? thumbnail : 'http://www.pngpix.com/wp-content/uploads/2016/08/PNGPIX-COM-Fork-PNG-Transparent-Image-500x331.png'}}
 							title={title} />
 					</CardSection>
 				</View>

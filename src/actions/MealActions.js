@@ -1,10 +1,18 @@
 import axios from 'axios';
-import { FETCH_RECIPE } from './types';
+import { FETCH_RECIPE, SEARCHTERM_CHANGE } from './types';
 
-export const fetchRecipes = () => {
-	// console.log('Got to mealActions')
+export const searchTermChange = (text) => {
+	console.log(text)
+	return {
+		type: SEARCHTERM_CHANGE,
+		payload: text
+	};
+};
+
+export const fetchRecipes = (recipeSearchTerm) => {
+	console.log('Got to mealActions', recipeSearchTerm)
 	return (dispatch) => {
-		return axios.get('http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3')
+		return axios.get('http://www.recipepuppy.com/api/?q=' + recipeSearchTerm + '&p=3')
 		    .then(response => {
 		    	console.log(response);
 				dispatch({
