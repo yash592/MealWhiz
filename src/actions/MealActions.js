@@ -11,7 +11,7 @@ export const searchTermChange = (text) => {
 	};
 };
 
-export const fetchRecipes = ({ recipeSearchTerm }) => {
+export const fetchRecipes = ( recipeSearchTerm ) => {
 	console.log('Got to mealActions', recipeSearchTerm);
 	const url = 'http://www.recipepuppy.com/api/?q=' + recipeSearchTerm + '&p=3';
 	console.log(url)

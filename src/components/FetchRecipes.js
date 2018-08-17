@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchRecipes } from '../actions';
+import { fetchRecipes, searchTermChange } from '../actions';
 import { ListView } from 'react-native';
 import axios from 'axios';
 import ListItem from './ListItem';
@@ -11,9 +11,7 @@ import ListItem from './ListItem';
 class FetchRecipes extends Component {
 
 	componentWillMount() {
-		
-		this.props.fetchRecipes();
-		// console.log("Got to mealContainer");
+
 		this.createDataSource(this.props);
 		
 	}
@@ -59,7 +57,11 @@ class FetchRecipes extends Component {
 
 
 const mapStateToProps = state => {
-	console.log(state)
+	console.log(state);
+	// return {
+	// 	recipeSearchTerm: state.recipeSearch.recipeSearchTerm
+	// }
+
 	const recipes = _.map(state.recipe, (meals) => {
 		return { ... meals }
 	})
@@ -70,4 +72,4 @@ const mapStateToProps = state => {
 
 
 
-export default connect( mapStateToProps, { fetchRecipes })(FetchRecipes);
+export default connect( mapStateToProps, { fetchRecipes, searchTermChange })(FetchRecipes);

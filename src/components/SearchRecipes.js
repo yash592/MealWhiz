@@ -15,7 +15,8 @@ class SearchRecipes extends Component {
 
 	onSearch() {
 		const { recipeSearchTerm } = this.props;
-		this.props.fetchRecipes({recipeSearchTerm});
+		console.log(recipeSearchTerm, "from search button")
+		this.props.fetchRecipes(recipeSearchTerm);
 	}
 
 

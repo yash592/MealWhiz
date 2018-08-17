@@ -9,9 +9,10 @@ const RouterComponent = () => {
 	return (
 		<Router sceneStyle={{ paddingTop: 15 }}>
 			<Scene key='root' hideNavBar>
-				<Scene key='auth'>
-					<Scene key='login' component={LoginForm} title='MealWhiz authentication' initial />
-				</Scene>
+			<Scene key='auth'>
+				<Scene key='login' component={LoginForm} title='Please Login' initial />
+			</Scene>
+				
 				<Scene key='SearchRecipes'>
 					<Scene
 						key='SearchRecipes'
@@ -22,7 +23,7 @@ const RouterComponent = () => {
 				<Scene key="mainScreen">
 					<Scene 
 					rightTitle='Add Employee'
-					// onRight={() => Actions.employeeCreate()}
+					onRight={() => Actions.SearchRecipes()}
 					key='FetchRecipes' 
 					component={FetchRecipes} 
 					title='Meals'
