@@ -10,7 +10,7 @@ const RouterComponent = () => {
 		<Router sceneStyle={{ paddingTop: 15 }}>
 			<Scene key='root' hideNavBar>
 			<Scene key='auth'>
-				<Scene key='login' component={LoginForm} title='Please Login' initial />
+				<Scene key='login' component={LoginForm}  initial />
 			</Scene>
 				
 				<Scene key='SearchRecipes'>

@@ -10,7 +10,6 @@ import SearchRecipes from './components/SearchRecipes';
 
 import ReduxThunk from 'redux-thunk';
 
-
 class App extends Component {
 
 	componentWillMount() {

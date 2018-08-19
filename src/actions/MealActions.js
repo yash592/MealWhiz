@@ -13,7 +13,7 @@ export const searchTermChange = (text) => {
 
 export const fetchRecipes = ( recipeSearchTerm ) => {
 	console.log('Got to mealActions', recipeSearchTerm);
-	const url = 'http://www.recipepuppy.com/api/?q=' + recipeSearchTerm + '&p=3';
+	const url = 'http://www.recipepuppy.com/api/?q=' + recipeSearchTerm + '&p=10';
 	console.log(url)
 	return (dispatch) => {
 		return axios.get(url)
