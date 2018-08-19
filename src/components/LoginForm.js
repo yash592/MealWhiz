@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image, KeyboardAvoidingView } from 'react-native';
-// import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, loginUser } from '../actions';
 import { Card, CardSection, Input, Button, Spinner } from './common';
@@ -33,7 +33,7 @@ class LoginForm extends Component {
 				</View>
 
 				);
-			
+
 		}
 	}
 
@@ -53,13 +53,13 @@ class LoginForm extends Component {
 
 	render() {
 		return (
-			<View
-			      style={{ backgroundColor: '#fff' }}
+			<KeyboardAwareScrollView
+			      style={{ backgroundColor: '#F44336' }}
 			      resetScrollToCoords={{ x: 0, y: 0 }}
 			      contentContainerStyle={styles.container}
 			      scrollEnabled={false}
 		    >
-			<Card>
+
 				<View>
 					<Image
 						style={{ width: '100%', height: 400, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: 90  }}
@@ -71,7 +71,7 @@ class LoginForm extends Component {
 						label='Email'
 						placeholder='user@email.com'
 						onChangeText={this.onEmailChange.bind(this)}
-						value={this.props.email}						
+						value={this.props.email}
 					/>
 				</CardSection>
 
@@ -81,17 +81,17 @@ class LoginForm extends Component {
 						label='Password'
 						placeholder='password'
 						onChangeText={this.onPasswordChange.bind(this)}
-						value={this.props.password}					
+						value={this.props.password}
 					/>
 				</CardSection>
 
 				{this.renderError()}
 
-				<CardSection>					
+				<CardSection>
 					{this.renderLoginButton()}
 				</CardSection>
-			</Card>
-			</View>
+
+			</KeyboardAwareScrollView>
 		);
 	};
 }
