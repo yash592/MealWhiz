@@ -1,8 +1,9 @@
 import React from 'react';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import LoginForm from './components/LoginForm';
-import FetchRecipes from './components/FetchRecipes'
-import SearchRecipes from './components/SearchRecipes'
+import FetchRecipes from './components/FetchRecipes';
+import SearchRecipes from './components/SearchRecipes';
+
 
 
 const RouterComponent = () => {
@@ -12,7 +13,7 @@ const RouterComponent = () => {
 			<Scene key='auth'>
 				<Scene key='login' component={LoginForm}  initial />
 			</Scene>
-				
+
 				<Scene key='SearchRecipes'>
 					<Scene
 						key='SearchRecipes'
@@ -21,17 +22,17 @@ const RouterComponent = () => {
 					/>
 				</Scene>
 				<Scene key="mainScreen">
-					<Scene 
+					<Scene
 					rightTitle='Add Employee'
 					onRight={() => Actions.SearchRecipes()}
-					key='FetchRecipes' 
-					component={FetchRecipes} 
+					key='FetchRecipes'
+					component={FetchRecipes}
 					title='Meals'
 					initial
 				 />
 			 	</Scene>
  			</Scene>
-			
+
 		</Router>
 
 	);
