@@ -7,6 +7,8 @@ import reducers from './reducers';
 import LoginForm from './components/LoginForm';
 import FetchRecipes from './components/FetchRecipes';
 import SearchRecipes from './components/SearchRecipes';
+import RecipeTileLayout from './components/RecipeTileLayout';
+
 
 import ReduxThunk from 'redux-thunk';
 
@@ -32,7 +34,7 @@ class App extends Component {
 			return (
 
 				<Provider store={store}>
-					<Router />
+					<RecipeTileLayout />
 				</Provider>
 
 				);

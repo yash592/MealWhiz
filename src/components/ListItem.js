@@ -7,17 +7,12 @@ import { Tile } from 'react-native-elements';
 
 
 class ListItem extends Component {
-	onRowPress() {
-		Actions.employeeEdit({ employee: this.props.employee });
-	}
-
-
 	render() {
 		const { title, thumbnail } = this.props.recipe
 		console.log("Thumbnail", thumbnail);
 		return (
 			<TouchableWithoutFeedback>
-				<View>					
+				<View>
 					<CardSection>
 					<Tile
 							style={styles.imgStyle}
@@ -38,7 +33,7 @@ const styles = {
 	},
 	imgStyle: {
     height: 300,
-    flex: 1,
+    flex: 0.3,
     width: 100
   }
 }

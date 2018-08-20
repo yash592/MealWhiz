@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
-import { Card, CardSection, Input, Button } from './common';
-import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
+import { Card, CardSection, Input } from './common';
+import { FormLabel, FormInput, FormValidationMessage, Button } from 'react-native-elements'
 import { fetchRecipes, searchTermChange } from '../actions';
 
 
@@ -23,18 +23,15 @@ class SearchRecipes extends Component {
 	render() {
 		console.log(this.props)
 		return (
-			<Card>
-				<CardSection>
-					<Input
+			<View>
+					<FormLabel>Recipe</FormLabel>
+					<FormInput
 						label="Recipe"
 						placeholder="e.g Burrito, Omelette"
 						onChangeText={this.recipeSearchTerm.bind(this)}
 						value={this.props.recipeSearchTerm}
 					/>
-				</CardSection>
-				
-				
-				<CardSection>
+					
 					<Button
 						title='Search'
 						color='white'
@@ -42,8 +39,7 @@ class SearchRecipes extends Component {
 						onPress={this.onSearch.bind(this)}>
 						Search
 					</Button>
-				</CardSection>
-			</Card>
+				</View>
 		)
 	}
 }
