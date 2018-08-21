@@ -4,16 +4,18 @@ import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchRecipes, searchTermChange } from '../actions';
-import { ListView } from 'react-native';
+import { ListView, FlatList} from 'react-native';
 import axios from 'axios';
-import ListItem from './ListItem';
+import ListItemColumn from './ListItemColumn';
+import ListItemTile from './ListItemTile';
+
 
 class FetchRecipes extends Component {
 
 	componentWillMount() {
 
 		this.createDataSource(this.props);
-		
+
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -22,7 +24,7 @@ class FetchRecipes extends Component {
 	}
 
 	createDataSource({ recipes }) {
-		// console.log(this.props.recipes)
+		console.log(this.props.recipes)
 		const ds = new ListView.DataSource({
 			rowHasChanged: (r1, r2) => r1 != r2
 		})
@@ -32,25 +34,28 @@ class FetchRecipes extends Component {
 	}
 
 
-	renderRow(recipe) {	
+	renderRow=(recipe)=> {
+		console.log('Tot to renderRow')
 		console.log(recipe)
-  		return <ListItem
+  		return <ListItemColumn
   				 recipe={recipe}
-  				 image={recipe} />
+  				  />
   	}
+
 
 
 
 		render() {
 		console.log("Props", this.props.recipes);
-		// this.createDataSource();	
+		// this.createDataSource();
 		return (
 			<ListView
-				enableEmptySections 
+				enableEmptySections
 				dataSource={this.dataSource}
 				renderRow={this.renderRow}
-			 />	
-				
+				numColumns='3'
+			 />
+
 		);
 	}
 }

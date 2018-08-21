@@ -1,20 +1,22 @@
 import React from 'react';
 import { View } from 'react-native';
 
-const Container = () => {
+const Container = (props) => {
   return (
-    <View style={styles.containerStyle}>
-
+    <View style={styles.container}>
+      {props.children}
     </View>
   );
 };
 
 const styles = {
-
-  containerStyle: {
-    flex: 1,
+    container: {
+    backgroundColor: '#C6DD4E',
+    // flex: 1,
+    justifyContent: 'flex-start',
     flexDirection: 'row',
-    // backgroundColor: 'red'
+    justifyContent: 'space-between',
+    alignItems:'flex-end'
   }
 
 }

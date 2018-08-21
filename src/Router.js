@@ -4,15 +4,20 @@ import LoginForm from './components/LoginForm';
 import FetchRecipes from './components/FetchRecipes';
 import SearchRecipes from './components/SearchRecipes';
 
+// <Scene key='auth'>
+// 				<Scene
+// 					key='login'
+// 					component={LoginForm}
+// 					 initial />
+// 			</Scene>
+
 
 
 const RouterComponent = () => {
 	return (
 		<Router sceneStyle={{ paddingTop: 15 }}>
 			<Scene key='root' hideNavBar>
-			<Scene key='auth'>
-				<Scene key='login' component={LoginForm}  initial />
-			</Scene>
+
 
 				<Scene key='SearchRecipes'>
 					<Scene
