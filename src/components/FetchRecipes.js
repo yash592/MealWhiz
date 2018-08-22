@@ -4,10 +4,12 @@ import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchRecipes, searchTermChange } from '../actions';
-import { ListView, FlatList} from 'react-native';
+import { ListView, FlatList } from 'react-native';
 import axios from 'axios';
 import ListItemColumn from './ListItemColumn';
 import ListItemTile from './ListItemTile';
+import { List, ListItem, SearchBar } from "react-native-elements";
+
 
 
 class FetchRecipes extends Component {
@@ -42,18 +44,28 @@ class FetchRecipes extends Component {
   				  />
   	}
 
+		_renderItem = ({ item }) => (
+			// console.log(item.title, item.thumbnail);
+
+			<ListItemTile
+				title={item.title}
+				avatar={ item.thumbnail }
+		 	/>
+
+		)
+
 
 
 
 		render() {
 		console.log("Props", this.props.recipes);
+
 		// this.createDataSource();
 		return (
-			<ListView
-				enableEmptySections
-				dataSource={this.dataSource}
-				renderRow={this.renderRow}
-				numColumns='3'
+			<FlatList
+				data={this.props.recipes}
+				renderItem={this._renderItem}
+				numColumns='2'
 			 />
 
 		);

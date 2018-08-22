@@ -13,12 +13,12 @@ class ListItem extends Component {
 		return (
 			<TouchableWithoutFeedback>
 				<View style={{flexDirection: 'row', flex: 1}}>
-
-					<Image
+					<CardSection>
+					<Tile
 							style={styles.imgStyle}
-							source={{uri: thumbnail ? thumbnail : 'http://www.pngpix.com/wp-content/uploads/2016/08/PNGPIX-COM-Fork-PNG-Transparent-Image-500x331.png'}}
-							 />
-
+							imageSrc={{uri: thumbnail ? thumbnail : 'http://www.pngpix.com/wp-content/uploads/2016/08/PNGPIX-COM-Fork-PNG-Transparent-Image-500x331.png'}}
+							title={title} />
+					</CardSection>
 				</View>
 			</TouchableWithoutFeedback>
 
@@ -33,7 +33,7 @@ const styles = {
 	},
 	imgStyle: {
     height: 100,
-    flexDirection: 'row',
+    flex: 0.3,
     width: 100
   }
 }
