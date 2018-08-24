@@ -8,6 +8,8 @@ import LoginForm from './components/LoginForm';
 import FetchRecipes from './components/FetchRecipes';
 import SearchRecipes from './components/SearchRecipes';
 import ListItemTile from './components/ListItemTile';
+import MainScreen from './components/MainScreen';
+
 
 
 import ReduxThunk from 'redux-thunk';
@@ -34,7 +36,7 @@ class App extends Component {
 			return (
 
 				<Provider store={store}>
-					<Router />
+					<MainScreen />
 				</Provider>
 
 				);
