@@ -5,3 +5,6 @@ export * from './Header';
 export * from './Input';
 export * from './Spinner';
 export * from './Container';
+export * from './MainScreenTopHalf';
+export * from './MainScreenBottomHalf';
+export * from './CategoryTiles';

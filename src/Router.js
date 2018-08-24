@@ -3,6 +3,8 @@ import { Scene, Router, Actions } from 'react-native-router-flux';
 import LoginForm from './components/LoginForm';
 import FetchRecipes from './components/FetchRecipes';
 import SearchRecipes from './components/SearchRecipes';
+import MainScreen from './components/MainScreen';
+
 
 // <Scene key='auth'>
 // 				<Scene
