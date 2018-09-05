@@ -36,7 +36,7 @@ class App extends Component {
 			return (
 
 				<Provider store={store}>
-					<MainScreen />
+					<Router />
 				</Provider>
 
 				);

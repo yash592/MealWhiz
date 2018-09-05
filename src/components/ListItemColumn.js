@@ -12,13 +12,13 @@ class ListItem extends Component {
 		console.log("Thumbnail", thumbnail);
 		return (
 			<TouchableWithoutFeedback>
-				<View style={{flexDirection: 'row', flex: 1}}>
-					<CardSection>
+				<View style={{flexDirection: 'column', flex: 1}}>
+
 					<Tile
 							style={styles.imgStyle}
 							imageSrc={{uri: thumbnail ? thumbnail : 'http://www.pngpix.com/wp-content/uploads/2016/08/PNGPIX-COM-Fork-PNG-Transparent-Image-500x331.png'}}
 							title={title} />
-					</CardSection>
+
 				</View>
 			</TouchableWithoutFeedback>
 
@@ -33,7 +33,7 @@ const styles = {
 	},
 	imgStyle: {
     height: 100,
-    flex: 0.3,
+    flex: 1,
     width: 100
   }
 }

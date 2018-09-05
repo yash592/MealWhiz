@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_RECIPE, SEARCHTERM_CHANGE } from './types';
+import { FETCH_RECIPE, SEARCHTERM_CHANGE, SEARCH_TILE } from './types';
 import { Actions } from 'react-native-router-flux';
 
 
@@ -22,13 +22,19 @@ export const fetchRecipes = ( recipeSearchTerm ) => {
 				dispatch({
 					type: FETCH_RECIPE,
 					payload: response.data.results
-
 				})
-
 				Actions.FetchRecipes();
 			})
-
 	}
+}
 
-	
+export const searchTile = (dispatch) => {
+	console.log('Got to search tile');
+	return (dispatch) => {
+		dispatch({
+			type: SEARCH_TILE,
+			payload: null
+		})
+		Actions.SearchRecipes()
+	}
 }
