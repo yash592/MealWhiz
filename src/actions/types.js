@@ -5,3 +5,4 @@ export const LOGIN_USER_FAIL = 'login_user_fail';
 export const LOGIN_USER = 'login_user';
 export const FETCH_RECIPE = 'fetch_recipe';
 export const SEARCHTERM_CHANGE = 'searchterm_change'
+export const SEARCH_TILE = 'search_tile';

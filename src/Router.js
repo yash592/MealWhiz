@@ -20,14 +20,23 @@ const RouterComponent = () => {
 		<Router sceneStyle={{ paddingTop: 15 }}>
 			<Scene key='root' hideNavBar>
 
+				<Scene key='MainScreen'>
+					<Scene
+						key='MainScreen'
+						component={MainScreen}
+						title='Brocolly'
+						initial
+					/>
+				</Scene>
 
 				<Scene key='SearchRecipes'>
 					<Scene
 						key='SearchRecipes'
 						component={SearchRecipes}
-						title='Search'
+						title='Search'						
 					/>
 				</Scene>
+
 				<Scene key="mainScreen">
 					<Scene
 					rightTitle='Add Employee'
@@ -38,6 +47,7 @@ const RouterComponent = () => {
 					initial
 				 />
 			 	</Scene>
+
  			</Scene>
 
 		</Router>

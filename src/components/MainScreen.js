@@ -1,44 +1,51 @@
 import React, { Component } from 'react';
 import {  StyleSheet, Text, TouchableWithoutFeedback, View, Image } from 'react-native';
-import { MainScreenTopHalf, MainScreenBottomHalf, CategoryTiles } from './common'
+import { connect } from 'react-redux';
+import { MainScreenTopHalf, MainScreenBottomHalf, CategoryTiles } from './common';
+import { searchTile } from '../actions';
+import { Actions } from 'react-native-router-flux';
 
 
 
 
 class MainScreen extends Component {
+
+  onTilePress() {
+    console.log("HELLO");
+    // this.props.searchTile();
+  }
+
   render() {
+    console.log(this.props)
     return (
       <View style={styles.container}>
         <MainScreenTopHalf>
-            <Image
-              style={styles.logo}
-              source={{uri: 'https://i.imgur.com/opw8T9w.png'}}
-              resizeMode={'cover'}
-            />
+            <Text>BrocollY</Text>
         </MainScreenTopHalf>
         <MainScreenBottomHalf>
-          <CategoryTiles>
+          <CategoryTiles onPress={Actions.SearchRecipes}>
               <Image
                 style={styles.tileImage}
-                source={{uri: 'https://cdn1.iconfinder.com/data/icons/food-flat-square-rounded-shadow-vol-4/150/knife__cut__weapon__fork-512.png'}}
+                source={require('./assets/fe.png')}
               />
+
           </CategoryTiles>
             <CategoryTiles>
               <Image
                 style={styles.tileImage}
-                source={{uri: 'https://cdn1.iconfinder.com/data/icons/food-flat-square-rounded-shadow-vol-4/150/knife__cut__weapon__fork-512.png'}}
+                source={require('./assets/fe.png')}
+             />
+          </CategoryTiles>
+          <CategoryTiles>
+              <Image
+                style={styles.tileImage}
+                source={require('./assets/fe.png')}
               />
           </CategoryTiles>
           <CategoryTiles>
               <Image
                 style={styles.tileImage}
-                source={{uri: 'https://cdn1.iconfinder.com/data/icons/food-flat-square-rounded-shadow-vol-4/150/knife__cut__weapon__fork-512.png'}}
-              />
-          </CategoryTiles>
-          <CategoryTiles>
-              <Image
-                style={styles.tileImage}
-                source={{uri: 'https://cdn1.iconfinder.com/data/icons/food-flat-square-rounded-shadow-vol-4/150/knife__cut__weapon__fork-512.png'}}
+                source={require('./assets/fe.png')}
               />
           </CategoryTiles>
 
@@ -64,11 +71,13 @@ const styles = StyleSheet.create({
     width: 50+'%'
   },
   tileImage: {
-    flex: 1,
-    
-
+    flex:0.7,
+    // width: '100%',
+    // height: '100%',
+    position: 'relative',
+    // backgroundColor: 'black'
   }
 
 })
 
-export default MainScreen;
+export default connect (null, { searchTile }) (MainScreen);

@@ -1,24 +1,26 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 
-const CategoryTiles = (props) => {
+const CategoryTiles = ({ onPress, children }) => {
   return (
-    <View elevation={5} style={styles.tileStyle}>
-      {props.children}
-    </View>
+    <TouchableOpacity onPress={onPress} style={styles.tileStyle}>
+      {children}
+    </TouchableOpacity>
   );
 };
 
 const styles = {
   tileStyle: {
-    height: '33%',
     width: '33%',
+    height: '33%',
     padding: 20,
     shadowColor :'black',
     shadowOffset: {width:20, height: 20},
     shadowOpacity: 1,
     shadowRadius: 2,
-    elevation: 5
+    elevation: 5,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 }
 
