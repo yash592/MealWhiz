@@ -10,11 +10,6 @@ import { Actions } from 'react-native-router-flux';
 
 class MainScreen extends Component {
 
-  onTilePress() {
-    console.log("HELLO");
-    // this.props.searchTile();
-  }
-
   render() {
     console.log(this.props)
     return (
