@@ -9,6 +9,7 @@ import FetchRecipes from './components/FetchRecipes';
 import SearchRecipes from './components/SearchRecipes';
 import ListItemTile from './components/ListItemTile';
 import MainScreen from './components/MainScreen';
+import SearchRecipesByCals from './components/SearchRecipesByCals';
 
 
 
@@ -36,7 +37,7 @@ class App extends Component {
 			return (
 
 				<Provider store={store}>
-					<Router />
+					<SearchRecipesByCals />
 				</Provider>
 
 				);
