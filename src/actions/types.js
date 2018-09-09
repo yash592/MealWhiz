@@ -4,6 +4,7 @@ export const LOGIN_USER_SUCCESS = 'login_user_success';
 export const LOGIN_USER_FAIL = 'login_user_fail';
 export const LOGIN_USER = 'login_user';
 export const FETCH_RECIPE = 'fetch_recipe';
+export const FETCH_RECIPE_CAL = 'fetch_recipe_cal';
 export const SEARCHTERM_CHANGE = 'searchterm_change'
 export const SEARCH_TILE = 'search_tile';
 export const SEARCHCALORIE_CHANGE_MIN = 'searchcalorie_change_min';

@@ -4,6 +4,8 @@ import LoginForm from './components/LoginForm';
 import FetchRecipes from './components/FetchRecipes';
 import SearchRecipes from './components/SearchRecipes';
 import MainScreen from './components/MainScreen';
+import SearchRecipesByCals from './components/SearchRecipesByCals';
+
 
 
 // <Scene key='auth'>
@@ -23,7 +25,7 @@ const RouterComponent = () => {
 				<Scene key='MainScreen'>
 					<Scene
 						key='MainScreen'
-						component={MainScreen}
+						component={SearchRecipesByCals}
 						title='Brocolly'
 						initial
 					/>
@@ -33,7 +35,7 @@ const RouterComponent = () => {
 					<Scene
 						key='SearchRecipes'
 						component={SearchRecipes}
-						title='Search'						
+						title='Search'
 					/>
 				</Scene>
 
