@@ -22,7 +22,7 @@ class SearchRecipesByCals extends Component {
   onSearch() {
     const { recipeCalsTextMin, recipeCalsTextMax } = this.props;
 
-    this.props.fetchRecipesByCals();
+    this.props.fetchRecipesByCals(recipeCalsTextMin, recipeCalsTextMax );
   }
 
   render() {

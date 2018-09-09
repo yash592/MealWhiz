@@ -12,7 +12,7 @@ class ListItem extends Component {
 		console.log("Thumbnail", thumbnail);
 		return (
 			<TouchableWithoutFeedback>
-				<View style={{flexDirection: 'column', flex: 1}}>
+				<View style={{flexDirection: 'row', flex: 1}}>
 
 					<Tile
 							style={styles.imgStyle}

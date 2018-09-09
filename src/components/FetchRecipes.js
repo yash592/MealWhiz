@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchRecipes, searchTermChange } from '../actions';
+import { fetchRecipes, searchTermChange, fetchRecipesByCals } from '../actions';
 import { ListView, FlatList } from 'react-native';
 import axios from 'axios';
 import ListItemColumn from './ListItemColumn';
@@ -14,26 +14,26 @@ import { List, ListItem, SearchBar } from "react-native-elements";
 
 class FetchRecipes extends Component {
 
-	componentWillMount() {
-
-		this.createDataSource(this.props);
-
-	}
-
-	componentWillReceiveProps(nextProps) {
-		console.log("nextProps", nextProps);
-		this.createDataSource(nextProps);
-	}
-
-	createDataSource({ recipes }) {
-		console.log(this.props.recipes)
-		const ds = new ListView.DataSource({
-			rowHasChanged: (r1, r2) => r1 != r2
-		})
-
-		this.dataSource = ds.cloneWithRows(recipes);
-		console.log("Datasource", recipes)
-	}
+	// componentWillMount() {
+	//
+	// 	this.createDataSource(this.props);
+	//
+	// }
+	//
+	// componentWillReceiveProps(nextProps) {
+	// 	console.log("nextProps", nextProps);
+	// 	this.createDataSource(nextProps);
+	// }
+	//
+	// createDataSource({ recipes }) {
+	// 	console.log(this.props.recipes)
+	// 	const ds = new ListView.DataSource({
+	// 		rowHasChanged: (r1, r2) => r1 != r2
+	// 	})
+	//
+	// 	this.dataSource = ds.cloneWithRows(recipes);
+	// 	console.log("Datasource", recipes)
+	// }
 
 
 	renderRow=(recipe)=> {
@@ -45,11 +45,10 @@ class FetchRecipes extends Component {
   	}
 
 		_renderItem = ({ item }) => (
-			// console.log(item.title, item.thumbnail);
-
+			 // console.log(item)
 			<ListItemTile
-				title={item.title}
-				avatar={ item.thumbnail }
+				title={item.recipe.label}
+				avatar={item.recipe.image}
 		 	/>
 
 		)
