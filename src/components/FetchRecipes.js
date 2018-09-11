@@ -64,7 +64,7 @@ class FetchRecipes extends Component {
 			<FlatList
 				data={this.props.recipes}
 				renderItem={this._renderItem}
-				numColumns='1'
+				numColumns='2'
 			 />
 
 		);
