@@ -21,11 +21,10 @@ const RouterComponent = () => {
 	return (
 		<Router sceneStyle={{ paddingTop: 15 }}>
 			<Scene key='root' hideNavBar>
-
-				<Scene key='MainScreen'>
+				<Scene key='MainScreen' drawer={true}>
 					<Scene
 						key='MainScreen'
-						component={SearchRecipesByCals}
+						component={MainScreen}
 						title='Brocolly'
 						initial
 					/>
@@ -36,17 +35,25 @@ const RouterComponent = () => {
 						key='SearchRecipes'
 						component={SearchRecipes}
 						title='Search'
+						back='true'
 					/>
 				</Scene>
 
-				<Scene key="mainScreen">
+				<Scene key="SearchRecipesByCals">
 					<Scene
-					rightTitle='Add Employee'
-					onRight={() => Actions.SearchRecipes()}
-					key='FetchRecipes'
-					component={FetchRecipes}
-					title='Meals'
-					initial
+						key='SearchRecipesByCals'
+						component={SearchRecipesByCals}
+						title='Search Recipes by Calories'
+						back
+				 />
+			 	</Scene>
+
+				<Scene key="FetchRecipes">
+					<Scene
+						key='FetchRecipes'
+						component={FetchRecipes}
+						title='Results'
+						back
 				 />
 			 	</Scene>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, ScrollView } from 'react-native';
 
 const MainScreenBottomHalf = (props) => {
   return (
@@ -14,7 +14,8 @@ const styles = StyleSheet.create({
     height: '70%',
     backgroundColor: '#f9fbe7',
     flexDirection: 'row',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    padding: 5
     }
 })
 

@@ -31,16 +31,18 @@ export const searchByCaloriesTermMax = (text) => {
 // Actions for API calls
 
 export const fetchRecipes = ( recipeSearchTerm ) => {
-	console.log('Got to mealActions', recipeSearchTerm);
-	const url = 'http://www.recipepuppy.com/api/?q=' + recipeSearchTerm + '&p=10';
-	console.log(url)
-	return (dispatch) => {
+	console.log('Got to fetchRecipesByCals action');
+	let appId = '72f05384'
+	let appKey = '768f219116c35bb3a3ae7441e28d7c36'
+	let url = `https://api.edamam.com/search?q=${recipeSearchTerm}=&app_id=${appId}&app_key=${appKey}&from=0&to=20`
+	console.log(url);
+	return(dispatch) => {
 		return axios.get(url)
-		    .then(response => {
-		    	console.log(response);
+			.then(response => {
+				console.log(response);
 				dispatch({
 					type: FETCH_RECIPE,
-					payload: response.data.results
+					payload: response.data.hits
 				})
 				Actions.FetchRecipes();
 			})
