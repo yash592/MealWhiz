@@ -12,7 +12,9 @@ const MainScreenTopHalf = (props) => {
 const styles = StyleSheet.create({
   topHalf: {
     height: '30%',
-    backgroundColor: '#F1F2EC',
+    // backgroundColor: '#FCEBBF',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: 'center'
   }

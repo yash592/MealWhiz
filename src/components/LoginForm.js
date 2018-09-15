@@ -3,7 +3,7 @@ import { View, Text, Image, KeyboardAvoidingView } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, loginUser } from '../actions';
-import { Card, CardSection, Input, Spinner } from './common';
+import { Card, CardSection, Input, Spinner, MainScreenTopHalf, MainScreenBottomHalf } from './common';
 import { FormLabel, FormInput, FormValidationMessage, Button } from 'react-native-elements'
 
 // Login Form component
@@ -50,10 +50,10 @@ class LoginForm extends Component {
 		return (
 			<Button
 				onPress={this.onButtonPress.bind(this)}
-				small
+				medium
 				raised
 				backgroundColor='#8BC34A'
-  			title='Login' />
+  			title='Sign In' />
 		)
 
 	}
@@ -62,37 +62,38 @@ class LoginForm extends Component {
 
 	render() {
 		return (
+
 			<KeyboardAwareScrollView
-			      style={{ backgroundColor: '#F1F2EC' }}
-			      resetScrollToCoords={{ x: 0, y: 0 }}
-			      contentContainerStyle={styles.container}
-			      scrollEnabled={false} >
+				      style={{ backgroundColor: '#ff8a65' }}
+				      resetScrollToCoords={{ x: 0, y: 0 }}
+				      contentContainerStyle={styles.container}
+				      scrollEnabled={false}>
 
-					<Image
-						style={{ width: '100%', height: 400, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: 90  }}
-						source={{uri: ''}}
-					/>
 
-					<FormLabel>Email</FormLabel>
-						<FormInput
-							label='Email'
-							placeholder='user@email.com'
-							onChangeText={this.onEmailChange.bind(this)}
-							value={this.props.email}
+					<View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', height: '30%', marginTop: 60}}>
+						<Image
+							style={{ width: '60%', height: 200, resizeMode: 'contain' }}
+							source={require('./assets/brocolly.png')}
 						/>
+					</View>
+								<FormInput
+									placeholder='user@email.com'
+									onChangeText={this.onEmailChange.bind(this)}
+									value={this.props.email}
+								/>
 
-					<FormLabel>Password</FormLabel>
-						<FormInput
-							secureTextEntry
-							label='Password'
-							placeholder='password'
-							onChangeText={this.onPasswordChange.bind(this)}
-							value={this.props.password}
-						/>
+								<FormInput
+									secureTextEntry
+									placeholder='password'
+									onChangeText={this.onPasswordChange.bind(this)}
+									value={this.props.password}
+								/>
 
-				{this.renderError()}
+						{this.renderError()}
 
-				{this.renderLoginButton()}
+						{this.renderLoginButton()}
+
+
 
 			</KeyboardAwareScrollView>
 		);

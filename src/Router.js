@@ -6,26 +6,27 @@ import SearchRecipes from './components/SearchRecipes';
 import MainScreen from './components/MainScreen';
 import SearchRecipesByCals from './components/SearchRecipesByCals';
 
-
-
 // <Scene key='auth'>
-// 				<Scene
-// 					key='login'
-// 					component={LoginForm}
-// 					 initial />
-// 			</Scene>
+// <Scene
+// 	hideNavBar={true}
+// 	key='login'
+// 	component={LoginForm}
+// 	 initial />
+// 	 </Scene>
 
 
 
 const RouterComponent = () => {
 	return (
-		<Router sceneStyle={{ paddingTop: 15 }}>
-			<Scene key='root' hideNavBar>
-				<Scene key='MainScreen' drawer={true}>
+		<Router>
+			<Scene key='root'>
+
+				<Scene key='MainScreen'>
 					<Scene
+						hideNavBar={true}
 						key='MainScreen'
 						component={MainScreen}
-						title='Brocolly'
+						// title='Brocolly'
 						initial
 					/>
 				</Scene>

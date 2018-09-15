@@ -12,10 +12,11 @@ const MainScreenBottomHalf = (props) => {
 const styles = StyleSheet.create({
   bottomHalf: {
     height: '70%',
-    backgroundColor: '#f9fbe7',
+    // backgroundColor: '#FCEBBF',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    padding: 5
+    padding: 5,
+    flex: 1
     }
 })
 
