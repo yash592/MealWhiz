@@ -13,7 +13,7 @@ class MainScreen extends Component {
       <View style={styles.container}>
 
         <MainScreenTopHalf>
-            <Text>BrocollY</Text>
+            <Image source={require('./assets/brocolly.png')} style={styles.logo} />
         </MainScreenTopHalf>
 
         <MainScreenBottomHalf>
@@ -21,7 +21,7 @@ class MainScreen extends Component {
           <CategoryTiles onPress={Actions.SearchRecipes}>
               <Image
                 style={styles.tileImage}
-                source={require('./assets/fe.png')}
+                source={require('./assets/search.png')}
               />
               <Text style={styles.tileText}>Search Recipes</Text>
 
@@ -29,14 +29,14 @@ class MainScreen extends Component {
             <CategoryTiles onPress={Actions.SearchRecipesByCals}>
               <Image
                 style={styles.tileImage}
-                source={require('./assets/fe.png')}
+                source={require('./assets/searchcals.png')}
              />
              <Text style={styles.tileText}>Search by Cals</Text>
           </CategoryTiles>
           <CategoryTiles>
               <Image
                 style={styles.tileImage}
-                source={require('./assets/fe.png')}
+                source={require('./assets/pasta.png')}
               />
               <Text style={styles.tileText}>Quick ones</Text>
           </CategoryTiles>
@@ -50,35 +50,35 @@ class MainScreen extends Component {
           <CategoryTiles>
               <Image
                 style={styles.tileImage}
-                source={require('./assets/fe.png')}
+                source={require('./assets/chicken-leg.png')}
               />
               <Text style={styles.tileText}>High Protein</Text>
           </CategoryTiles>
           <CategoryTiles>
               <Image
                 style={styles.tileImage}
-                source={require('./assets/fe.png')}
+                source={require('./assets/cheese.png')}
               />
               <Text style={styles.tileText}>High Fat</Text>
           </CategoryTiles>
           <CategoryTiles>
               <Image
                 style={styles.tileImage}
-                source={require('./assets/fe.png')}
+                source={require('./assets/avocado.png')}
               />
               <Text style={styles.tileText}>Vegan</Text>
           </CategoryTiles>
           <CategoryTiles>
               <Image
                 style={styles.tileImage}
-                source={require('./assets/fe.png')}
+                source={require('./assets/vegetarian.png')}
               />
               <Text style={styles.tileText}>Vegetarian</Text>
           </CategoryTiles>
           <CategoryTiles>
               <Image
                 style={styles.tileImage}
-                source={require('./assets/fe.png')}
+                source={require('./assets/salad.png')}
               />
               <Text style={styles.tileText}>Paleo</Text>
           </CategoryTiles>
@@ -94,29 +94,34 @@ class MainScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     // backgroundColor: '#F1F2EC',
+    backgroundColor: '#FFCCBC',
     flex: 1
   },
   topHalf: {
     height: '30%',
-    backgroundColor: 'white',
+    // backgroundColor: '#ff8a65',
     alignItems: 'center',
     justifyContent: 'center'
   },
   logo: {
-    height: 80+'%',
-    width: 50+'%'
+    flex: 0.6,
+    width: '100%',
+    height: "70%",
+    resizeMode: 'contain'
   },
   tileImage: {
     // flex:1,
-    width: "30%",
-    height: "30%",
-    // position: 'relative',
+    width: "39%",
+    height: "35%",
+    position: 'relative'
+
     // backgroundColor: 'black'
   },
   tileText: {
     flex: 0.3,
     position: 'relative',
-    margin: 5
+    margin: 5,
+    color: 'red'
   }
 
 })
