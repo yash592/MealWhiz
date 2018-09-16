@@ -11,8 +11,8 @@ const CategoryTiles = ({ onPress, children }) => {
 
 const styles = {
   tileStyle: {
-    width: '28%',
-    height: '28%',
+    width: '28.1%',
+    height: '28.1%',
     margin: 10,
     // paddingRight: 40,
     shadowColor :'black',

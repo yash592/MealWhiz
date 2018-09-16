@@ -4,8 +4,13 @@ import { connect } from 'react-redux';
 import { MainScreenTopHalf, MainScreenBottomHalf, CategoryTiles } from './common';
 import { searchTile } from '../actions';
 import { Actions } from 'react-native-router-flux';
+import { fetchRecipesBalanced, fetchRecipes, quickRecipes, highProteinRecipes, highFatRecipes, veganRecipes } from '../actions';
 
 class MainScreen extends Component {
+
+  onSearchBalanced() {
+    this.props.fetchRecipesBalanced();
+  }
 
   render() {
     console.log(this.props)
@@ -33,7 +38,7 @@ class MainScreen extends Component {
              />
              <Text style={styles.tileText}>Search by Cals</Text>
           </CategoryTiles>
-          <CategoryTiles>
+          <CategoryTiles onPress={() => this.props.quickRecipes()}>
               <Image
                 style={styles.tileImage}
                 source={require('./assets/pasta.png')}
@@ -47,7 +52,7 @@ class MainScreen extends Component {
               />
               <Text style={styles.tileText}>Balanced</Text>
           </CategoryTiles>
-          <CategoryTiles>
+          <CategoryTiles onPress={() => this.props.highProteinRecipes()}>
               <Image
                 style={styles.tileImage}
                 source={require('./assets/chicken-leg.png')}
@@ -61,7 +66,7 @@ class MainScreen extends Component {
               />
               <Text style={styles.tileText}>High Fat</Text>
           </CategoryTiles>
-          <CategoryTiles>
+          <CategoryTiles onPress={() => this.props.veganRecipes()}>
               <Image
                 style={styles.tileImage}
                 source={require('./assets/avocado.png')}
@@ -87,7 +92,7 @@ class MainScreen extends Component {
 
 
       </View>
-        );
+    );
   }
 }
 
@@ -126,4 +131,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default connect (null, { searchTile }) (MainScreen);
+export default connect (null, { fetchRecipes, fetchRecipesBalanced, quickRecipes, highProteinRecipes, highFatRecipes, veganRecipes }) (MainScreen);
