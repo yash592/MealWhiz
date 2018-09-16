@@ -14,29 +14,7 @@ import { List, ListItem, SearchBar } from "react-native-elements";
 
 class FetchRecipes extends Component {
 
-	// componentWillMount() {
-	//
-	// 	this.createDataSource(this.props);
-	//
-	// }
-	//
-	// componentWillReceiveProps(nextProps) {
-	// 	console.log("nextProps", nextProps);
-	// 	this.createDataSource(nextProps);
-	// }
-	//
-	// createDataSource({ recipes }) {
-	// 	console.log(this.props.recipes)
-	// 	const ds = new ListView.DataSource({
-	// 		rowHasChanged: (r1, r2) => r1 != r2
-	// 	})
-	//
-	// 	this.dataSource = ds.cloneWithRows(recipes);
-	// 	console.log("Datasource", recipes)
-	// }
-
-
-	renderRow=(recipe)=> {
+	renderRow = (recipe) => {
 		console.log('Tot to renderRow')
 		console.log(recipe)
   		return <ListItemColumn
@@ -53,13 +31,8 @@ class FetchRecipes extends Component {
 
 		)
 
-
-
-
 		render() {
 		console.log("Props", this.props.recipes);
-
-		// this.createDataSource();
 		return (
 			<FlatList
 				data={this.props.recipes}
