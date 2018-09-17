@@ -31,13 +31,16 @@ class FetchRecipes extends Component {
 
 		)
 
+		_keyExtractor = (item, index) => item.recipe.calories
+
 		render() {
 		console.log("Props", this.props.recipes);
 		return (
 			<FlatList
 				data={this.props.recipes}
 				renderItem={this._renderItem}
-				numColumns='1'
+				keyExtractor={this._keyExtractor}
+				numColumns='2'
 			 />
 
 		);

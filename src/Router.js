@@ -19,11 +19,11 @@ import SearchRecipesByCals from './components/SearchRecipesByCals';
 const RouterComponent = () => {
 	return (
 		<Router>
-			<Scene key='root'>
+			<Scene key='root' hideNavBar>
 
 				<Scene key='MainScreen'>
 					<Scene
-						hideNavBar={true}
+						hideNavBar
 						key='MainScreen'
 						component={MainScreen}
 						// title='Brocolly'
@@ -31,12 +31,10 @@ const RouterComponent = () => {
 					/>
 				</Scene>
 
-				<Scene key='SearchRecipes'>
+				<Scene key='SearchRecipes' title='Search' back='true'>
 					<Scene
 						key='SearchRecipes'
 						component={SearchRecipes}
-						title='Search'
-						back='true'
 					/>
 				</Scene>
 
@@ -53,7 +51,8 @@ const RouterComponent = () => {
 					<Scene
 						key='FetchRecipes'
 						component={FetchRecipes}
-						title='Results'
+						// title='Results'
+						// hideNavBar={true}
 						back
 				 />
 			 	</Scene>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {  Container } from './common';
-import { CardSection } from './common';
+import { CardSection, RecipeTile } from './common';
 
 import { Actions } from 'react-native-router-flux';
 import { Text, TouchableWithoutFeedback, View, Image } from 'react-native';
@@ -14,15 +14,14 @@ class ListItemTile extends Component {
     console.log(title, thumbnail);
 
     return (
-      <View style={{flexDirection: 'row', flex: 1}}>
-        <View style={{width:'50%', height:'50%', padding: 20}}>
-          <TouchableWithoutFeedback>
-  					<Tile
+      <View style={{flexDirection: 'row', flex: 1, backgroundColor: '#FFCCBC'}}>
+        <RecipeTile onPress={()=>console.log(this.props.title)}>
+  					<Image
   							style={styles.imgStyle}
-  							imageSrc={{uri: thumbnail ? thumbnail : 'http://www.pngpix.com/wp-content/uploads/2016/08/PNGPIX-COM-Fork-PNG-Transparent-Image-500x331.png'}}
-  							title={title} />
-         </TouchableWithoutFeedback>
-       </View>
+  							source={{uri: thumbnail ? thumbnail : 'http://www.pngpix.com/wp-content/uploads/2016/08/PNGPIX-COM-Fork-PNG-Transparent-Image-500x331.png'}}
+  					 />
+             <Text style={styles.textStyle}>{title}</Text>
+         </RecipeTile>
       </View>
     )
   }
@@ -35,10 +34,14 @@ const styles = {
 	},
 	imgStyle: {
     width: '100%',
-    height: '100%',
+    height: '75%',
+    // flex: 1,
+    // padding: 10
+  },
+  textStyle: {
+    margin: 5,
     flex: 1,
-    padding: 10
-
+    color: '#fd5523'
   }
 }
 
