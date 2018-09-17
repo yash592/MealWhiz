@@ -1,4 +1,4 @@
-import { FETCH_RECIPE, SEARCH_TILE, FETCH_RECIPE_CAL } from '../actions/types';
+import { FETCH_RECIPE, SEARCH_TILE, FETCH_RECIPE_CAL, FETCH_RECIPE_QUICK } from '../actions/types';
 
 const initialState = {
 	meals: '',
@@ -13,6 +13,9 @@ export default (state = initialState, action) => {
 			return action.payload;
 		case FETCH_RECIPE_CAL:
 			console.log('from search tile reducer');
+			return action.payload;
+		case FETCH_RECIPE_QUICK:
+			console.log('quick recipe reducer')
 			return action.payload;
 	default:
 		return state;

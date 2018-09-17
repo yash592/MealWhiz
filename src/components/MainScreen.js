@@ -8,10 +8,6 @@ import { fetchRecipesBalanced, fetchRecipes, quickRecipes, highProteinRecipes, h
 
 class MainScreen extends Component {
 
-  onSearchBalanced() {
-    this.props.fetchRecipesBalanced();
-  }
-
   render() {
     console.log(this.props)
     return (
@@ -89,8 +85,6 @@ class MainScreen extends Component {
           </CategoryTiles>
 
         </MainScreenBottomHalf>
-
-
       </View>
     );
   }

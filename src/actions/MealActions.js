@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_RECIPE, SEARCHTERM_CHANGE, SEARCH_TILE, SEARCHCALORIE_CHANGE_MIN, SEARCHCALORIE_CHANGE_MAX, FETCH_RECIPE_CAL, FETCH_RECIPE_BALANCED, QUICK_RECIPE, HIGH_PROTEIN_RECIPE, HIGH_FAT_RECIPE, VEGAN_RECIPE } from './types';
+import { FETCH_RECIPE, FETCH_RECIPE_QUICK, SEARCHTERM_CHANGE, SEARCH_TILE, SEARCHCALORIE_CHANGE_MIN, SEARCHCALORIE_CHANGE_MAX, FETCH_RECIPE_CAL, FETCH_RECIPE_BALANCED, QUICK_RECIPE, HIGH_PROTEIN_RECIPE, HIGH_FAT_RECIPE, VEGAN_RECIPE } from './types';
 import { Actions } from 'react-native-router-flux';
 
 // Edamam App ID: 72f05384
@@ -97,12 +97,17 @@ export const fetchRecipesBalanced = () => {
 
 export const quickRecipes = () => {
 	console.log('Got to quick recipes');
-	let url = `https://api.edamam.com/search?q=rice&app_id=${appId}&app_key=${appKey}&from=0&to=20&time=20`
+	let url = `https://api.edamam.com/search?q=chicken&app_id=${appId}&app_key=${appKey}&from=0&to=20&time=20`
 	console.log(url);
 	return(dispatch) => {
 		return axios.get(url)
 			.then(response => {
-				console.log(response)
+				console.log(response);
+				dispatch({
+					type: FETCH_RECIPE_QUICK,
+					payload: response.data.hits
+				})
+				Actions.FetchRecipes();
 			})
 	}
 }

@@ -8,3 +8,4 @@ export * from './Container';
 export * from './MainScreenTopHalf';
 export * from './MainScreenBottomHalf';
 export * from './CategoryTiles';
+export * from './RecipeTile';
