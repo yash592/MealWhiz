@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchRecipes, searchTermChange, fetchRecipesByCals } from '../actions';
+import { fetchRecipes, searchTermChange, fetchRecipesByCals, recipeSave } from '../actions';
 import { ListView, FlatList } from 'react-native';
 import axios from 'axios';
 import ListItemColumn from './ListItemColumn';
@@ -64,4 +64,4 @@ const mapStateToProps = state => {
 
 
 
-export default connect( mapStateToProps, { fetchRecipes, searchTermChange })(FetchRecipes);
+export default connect( mapStateToProps, { fetchRecipes, searchTermChange, recipeSave })(FetchRecipes);

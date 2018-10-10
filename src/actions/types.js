@@ -14,3 +14,4 @@ export const SEARCHTERM_CHANGE = 'searchterm_change'
 export const SEARCH_TILE = 'search_tile';
 export const SEARCHCALORIE_CHANGE_MIN = 'searchcalorie_change_min';
 export const SEARCHCALORIE_CHANGE_MAX = 'searchcalorie_change_max';
+export const RECIPE_CREATE = 'recipe_create';

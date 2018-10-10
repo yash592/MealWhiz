@@ -20,6 +20,13 @@ const RouterComponent = () => {
 	return (
 		<Router>
 			<Scene key='root' hideNavBar>
+				<Scene key='auth'>
+				<Scene
+					hideNavBar={true}
+					key='login'
+					component={LoginForm}
+					 initial />
+			 </Scene>
 
 				<Scene key='MainScreen'>
 					<Scene
@@ -27,7 +34,7 @@ const RouterComponent = () => {
 						key='MainScreen'
 						component={MainScreen}
 						// title='Brocolly'
-						initial
+						
 					/>
 				</Scene>
 
