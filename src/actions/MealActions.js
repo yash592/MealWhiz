@@ -1,6 +1,8 @@
 import axios from 'axios';
-import { FETCH_RECIPE, FETCH_RECIPE_QUICK, SEARCHTERM_CHANGE, SEARCH_TILE, SEARCHCALORIE_CHANGE_MIN, SEARCHCALORIE_CHANGE_MAX, FETCH_RECIPE_CAL, FETCH_RECIPE_BALANCED, QUICK_RECIPE, HIGH_PROTEIN_RECIPE, HIGH_FAT_RECIPE, VEGAN_RECIPE } from './types';
+import { FETCH_RECIPE, FETCH_RECIPE_QUICK, SEARCHTERM_CHANGE, SEARCH_TILE, SEARCHCALORIE_CHANGE_MIN, SEARCHCALORIE_CHANGE_MAX, FETCH_RECIPE_CAL, FETCH_RECIPE_BALANCED, QUICK_RECIPE, HIGH_PROTEIN_RECIPE, HIGH_FAT_RECIPE, VEGAN_RECIPE, RECIPE_CREATE } from './types';
 import { Actions } from 'react-native-router-flux';
+import firebase from 'firebase';
+
 
 // Edamam App ID: 72f05384
 // Edamam App Keys: 768f219116c35bb3a3ae7441e28d7c36
@@ -184,3 +186,17 @@ export const vegetarianRecipes = () => {
 // 		Actions.SearchRecipes()
 // 	}
 // }
+
+// Database actions
+
+export const recipeSave = ({ title, thumbnail }) => {
+	console.log('Got to recipesave action', title, thumbnail);
+	const { currentUser } = firebase.auth();
+
+		firebase.database().ref(`/users/${currentUser.uid}/recipes`)
+			.push({ title, thumbnail })
+			.then(() => {
+				console.log(title, thumbnail)
+			})
+
+}

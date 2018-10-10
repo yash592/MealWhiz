@@ -15,7 +15,7 @@ const styles = {
   RecipeTile: {
     width: '90%',
     height: 250,
-    backgroundColor: '#F9FBE7',
+    backgroundColor: '#F1F2EC',
     // padding: 20,
     margin: 10,
     alignItems: 'center',

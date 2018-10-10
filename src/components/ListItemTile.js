@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {  Container } from './common';
 import { CardSection, RecipeTile } from './common';
+import { connect } from 'react-redux';
+import { recipeSave } from '../actions';
 
 import { Actions } from 'react-native-router-flux';
 import { Text, TouchableWithoutFeedback, View, Image } from 'react-native';
@@ -8,14 +10,25 @@ import { Tile } from 'react-native-elements';
 
 
 class ListItemTile extends Component {
+
+  onButtonPress() {
+      console.log('recipe save button clicked');
+      const  title  = this.props.title;
+      const  thumbnail  = this.props.avatar;
+      this.props.recipeSave({ title, thumbnail })
+    }
+
+
   render() {
     const  title  = this.props.title;
     const  thumbnail  = this.props.avatar;
-    console.log(title, thumbnail);
+    console.log(this.props)
+
+
 
     return (
       <View style={{flexDirection: 'row', flex: 1, backgroundColor: '#FFCCBC'}}>
-        <RecipeTile onPress={()=>console.log(this.props.title)}>
+        <RecipeTile onPress={() => this.onButtonPress()}>
   					<Image
   							style={styles.imgStyle}
   							source={{uri: thumbnail ? thumbnail : 'http://www.pngpix.com/wp-content/uploads/2016/08/PNGPIX-COM-Fork-PNG-Transparent-Image-500x331.png'}}
@@ -46,4 +59,4 @@ const styles = {
 }
 
 
-export default ListItemTile;
+export default connect(null, { recipeSave } ) (ListItemTile);
