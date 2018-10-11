@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_RECIPE, FETCH_RECIPE_QUICK, SEARCHTERM_CHANGE, SEARCH_TILE, SEARCHCALORIE_CHANGE_MIN, SEARCHCALORIE_CHANGE_MAX, FETCH_RECIPE_CAL, FETCH_RECIPE_BALANCED, QUICK_RECIPE, HIGH_PROTEIN_RECIPE, HIGH_FAT_RECIPE, VEGAN_RECIPE, RECIPE_CREATE } from './types';
+import { FETCH_RECIPE, FETCH_RECIPE_QUICK, SEARCHTERM_CHANGE, SEARCH_TILE, SEARCHCALORIE_CHANGE_MIN, SEARCHCALORIE_CHANGE_MAX, FETCH_RECIPE_CAL, FETCH_RECIPE_BALANCED, QUICK_RECIPE, HIGH_PROTEIN_RECIPE, HIGH_FAT_RECIPE, VEGAN_RECIPE, RECIPE_CREATE, SAVE_RECIPE } from './types';
 import { Actions } from 'react-native-router-flux';
 import firebase from 'firebase';
 
@@ -192,11 +192,12 @@ export const vegetarianRecipes = () => {
 export const recipeSave = ({ title, thumbnail }) => {
 	console.log('Got to recipesave action', title, thumbnail);
 	const { currentUser } = firebase.auth();
-
+	return(dispatch) => {
 		firebase.database().ref(`/users/${currentUser.uid}/recipes`)
 			.push({ title, thumbnail })
 			.then(() => {
-				console.log(title, thumbnail)
+				dispatch({ type: SAVE_RECIPE ,payload: null })
 			})
+		}
 
 }
