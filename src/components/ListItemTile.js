@@ -11,7 +11,7 @@ import { Tile } from 'react-native-elements';
 
 class ListItemTile extends Component {
 
-  onButtonPress() {
+  onLikePress() {
       console.log('recipe save button clicked');
       const  title  = this.props.title;
       const  thumbnail  = this.props.avatar;
@@ -28,7 +28,7 @@ class ListItemTile extends Component {
 
     return (
       <View style={{flexDirection: 'row', flex: 1, backgroundColor: '#FFCCBC'}}>
-        <RecipeTile onPress={() => this.onButtonPress()}>
+        <RecipeTile onPress={() => this.onLikePress()}>
   					<Image
   							style={styles.imgStyle}
   							source={{uri: thumbnail ? thumbnail : 'http://www.pngpix.com/wp-content/uploads/2016/08/PNGPIX-COM-Fork-PNG-Transparent-Image-500x331.png'}}
