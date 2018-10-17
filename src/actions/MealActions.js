@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_RECIPE, FETCH_RECIPE_QUICK, SEARCHTERM_CHANGE, SEARCH_TILE, SEARCHCALORIE_CHANGE_MIN, SEARCHCALORIE_CHANGE_MAX, FETCH_RECIPE_CAL, FETCH_RECIPE_BALANCED, QUICK_RECIPE, HIGH_PROTEIN_RECIPE, HIGH_FAT_RECIPE, VEGAN_RECIPE, RECIPE_CREATE, SAVE_RECIPE } from './types';
+import { FETCH_RECIPE, FETCH_RECIPE_QUICK, SEARCHTERM_CHANGE, SEARCH_TILE, SEARCHCALORIE_CHANGE_MIN, SEARCHCALORIE_CHANGE_MAX, FETCH_RECIPE_CAL, FETCH_RECIPE_BALANCED, QUICK_RECIPE, HIGH_PROTEIN_RECIPE, HIGH_FAT_RECIPE, VEGAN_RECIPE, RECIPE_CREATE, SAVE_RECIPE, FETCH_SAVED_RECIPES } from './types';
 import { Actions } from 'react-native-router-flux';
 import firebase from 'firebase';
 
@@ -200,4 +200,8 @@ export const recipeSave = ({ title, thumbnail }) => {
 			})
 		}
 
+}
+
+export const fetchSavedRecipes = () => {
+	console.log('got to fetch saved recipes');
 }

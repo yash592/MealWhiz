@@ -16,4 +16,5 @@ export const SEARCHCALORIE_CHANGE_MIN = 'searchcalorie_change_min';
 export const SEARCHCALORIE_CHANGE_MAX = 'searchcalorie_change_max';
 export const RECIPE_CREATE = 'recipe_create';
 export const SAVE_RECIPE = 'save_recipe';
-export const DELETE_RECIPE = 'delete_recipe'; 
+export const DELETE_RECIPE = 'delete_recipe';
+export const FETCH_SAVED_RECIPES = 'fetch_saved_recipes'

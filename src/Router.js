@@ -5,6 +5,7 @@ import FetchRecipes from './components/FetchRecipes';
 import SearchRecipes from './components/SearchRecipes';
 import MainScreen from './components/MainScreen';
 import SearchRecipesByCals from './components/SearchRecipesByCals';
+import SavedRecipes from './components/SavedRecipes'
 
 // <Scene key='auth'>
 // <Scene
@@ -24,7 +25,7 @@ const RouterComponent = () => {
 				<Scene
 					hideNavBar={true}
 					key='login'
-					component={LoginForm}
+					component={SavedRecipes}
 					 initial />
 			 </Scene>
 
@@ -34,7 +35,7 @@ const RouterComponent = () => {
 						key='MainScreen'
 						component={MainScreen}
 						// title='Brocolly'
-						
+
 					/>
 				</Scene>
 
