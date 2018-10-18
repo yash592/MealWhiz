@@ -12,6 +12,7 @@ export default (state = initialState, action) => {
       console.log('delete recipe reducer');
     case FETCH_SAVED_RECIPES:
       console.log('fetch saved recipes reducer');
+      return action.payload;
       default:
         return state;
 

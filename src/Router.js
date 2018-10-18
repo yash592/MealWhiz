@@ -25,7 +25,7 @@ const RouterComponent = () => {
 				<Scene
 					hideNavBar={true}
 					key='login'
-					component={SavedRecipes}
+					component={LoginForm}
 					 initial />
 			 </Scene>
 
@@ -50,6 +50,14 @@ const RouterComponent = () => {
 					<Scene
 						key='SearchRecipesByCals'
 						component={SearchRecipesByCals}
+						title='Search Recipes by Calories'
+						back
+				 />
+			 	</Scene>
+				<Scene key="SavedRecipes">
+					<Scene
+						key='SavedRecipes'
+						component={SavedRecipes}
 						title='Search Recipes by Calories'
 						back
 				 />
