@@ -205,7 +205,7 @@ export const recipeSave = ({ title, thumbnail }) => {
 export const fetchSavedRecipes = () => {
 	console.log('got to fetch saved recipes');
 	const { currentUser } = firebase.auth();
-	// console.log(currentUser.uid);
+	console.log(currentUser.uid);
 	return (dispatch) => {
 		firebase.database().ref(`/users/${currentUser.uid}/recipes`)
 		.on('value', snapshot => {
