@@ -23,7 +23,7 @@ class ListItemTile extends Component {
   render() {
     const  title  = this.props.title;
     const  thumbnail  = this.props.avatar;
-    console.log(this.props)
+    // console.log(this.props)
 
 
 

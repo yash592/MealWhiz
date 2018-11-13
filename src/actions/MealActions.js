@@ -45,11 +45,11 @@ const appKey = '768f219116c35bb3a3ae7441e28d7c36';
 export const fetchRecipes = ( recipeSearchTerm ) => {
 	console.log('Got to fetchRecipesByCals action');
 	let url = `https://api.edamam.com/search?q=${recipeSearchTerm}=&app_id=${appId}&app_key=${appKey}&from=0&to=40`
-	console.log(url);
+	// console.log(url);
 	return(dispatch) => {
 		return axios.get(url)
 			.then(response => {
-				console.log(response);
+				// console.log(response);
 				dispatch({
 					type: FETCH_RECIPE,
 					payload: response.data.hits
@@ -66,11 +66,11 @@ export const fetchRecipes = ( recipeSearchTerm ) => {
 export const fetchRecipesByCals = (min, max) => {
 	console.log('Got to fetchRecipesByCals action');
 	let url = `https://api.edamam.com/search?q=&app_id=${appId}&app_key=${appKey}&from=0&to=20&calories=${min}-${max}`
-	console.log(url);
+	// console.log(url);
 	return(dispatch) => {
 		return axios.get(url)
 			.then(response => {
-				console.log(response);
+				// console.log(response);
 				dispatch({
 					type: FETCH_RECIPE_CAL,
 					payload: response.data.hits
@@ -85,7 +85,7 @@ export const fetchRecipesByCals = (min, max) => {
 export const fetchRecipesBalanced = () => {
 	console.log('Got to balanced cals');
 	let url = `https://api.edamam.com/search?q=rice&app_id=${appId}&app_key=${appKey}&from=0&to=20&diet=balanced`
-	console.log(url);
+	// console.log(url);
 	return(dispatch) => {
 		return axios.get(url)
 			.then(response => {
@@ -100,11 +100,11 @@ export const fetchRecipesBalanced = () => {
 export const quickRecipes = () => {
 	console.log('Got to quick recipes');
 	let url = `https://api.edamam.com/search?q=chicken&app_id=${appId}&app_key=${appKey}&from=0&to=20&time=20`
-	console.log(url);
+	// console.log(url);
 	return(dispatch) => {
 		return axios.get(url)
 			.then(response => {
-				console.log(response);
+				// console.log(response);
 				dispatch({
 					type: FETCH_RECIPE_QUICK,
 					payload: response.data.hits
@@ -119,7 +119,7 @@ export const quickRecipes = () => {
 export const highProteinRecipes = () => {
 	console.log('got to high protein recipes');
 	let url = `https://api.edamam.com/search?q=&app_id=${appId}&app_key=${appKey}&diet=high-protein`
-	console.log(url);
+	// console.log(url);
 	return(dispatch) => {
 		return axios.get(url)
 			.then(response => {
@@ -190,7 +190,7 @@ export const vegetarianRecipes = () => {
 // Database actions
 
 export const recipeSave = ({ title, thumbnail }) => {
-	console.log('Got to recipesave action', title, thumbnail);
+	// console.log('Got to recipesave action', title, thumbnail);
 	const { currentUser } = firebase.auth();
 	return(dispatch) => {
 		firebase.database().ref(`/users/${currentUser.uid}/recipes`)
@@ -203,7 +203,7 @@ export const recipeSave = ({ title, thumbnail }) => {
 }
 
 export const fetchSavedRecipes = () => {
-	console.log('got to fetch saved recipes');
+	// console.log('got to fetch saved recipes');
 	const { currentUser } = firebase.auth();
 	console.log(currentUser.uid);
 	return (dispatch) => {

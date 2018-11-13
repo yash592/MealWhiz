@@ -78,6 +78,7 @@ class LoginForm extends Component {
 					</View>
 								<FormInput
 									placeholder='user@email.com'
+									inputStyle={styles.email}
 									onChangeText={this.onEmailChange.bind(this)}
 									value={this.props.email}
 								/>
@@ -85,6 +86,7 @@ class LoginForm extends Component {
 								<FormInput
 									secureTextEntry
 									placeholder='password'
+									inputStyle={styles.password}
 									onChangeText={this.onPasswordChange.bind(this)}
 									value={this.props.password}
 								/>
@@ -105,6 +107,13 @@ const styles = {
 		fontSize: 20,
 		color: 'red',
 		alignSelf: 'center'
+	},
+	email: {
+		color: 'white',
+		fontSize: 30
+	},
+	password: {
+		color: 'white'
 	}
 }
 

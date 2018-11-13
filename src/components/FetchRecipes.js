@@ -34,7 +34,7 @@ class FetchRecipes extends Component {
 		_keyExtractor = (item, index) => item.recipe.calories
 
 		render() {
-		console.log("Props", this.props.recipes);
+		// console.log("Props", this.props.recipes);
 		return (
 			<FlatList
 				data={this.props.recipes}
@@ -49,7 +49,7 @@ class FetchRecipes extends Component {
 
 
 const mapStateToProps = state => {
-	console.log(state);
+	// console.log(state);
 	// return {
 	// 	recipeSearchTerm: state.recipeSearch.recipeSearchTerm
 	// }
