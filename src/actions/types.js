@@ -2,6 +2,7 @@ export const EMAIL_CHANGED = 'email_changed';
 export const PASSWORD_CHANGED = 'password_changed';
 export const LOGIN_USER_SUCCESS = 'login_user_success';
 export const LOGIN_USER_FAIL = 'login_user_fail';
+export const IF_USER_LOGGED_IN = 'if_user_logged_in';
 export const LOGIN_USER = 'login_user';
 export const FETCH_RECIPE = 'fetch_recipe';
 export const FETCH_RECIPE_CAL = 'fetch_recipe_cal';

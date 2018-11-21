@@ -4,12 +4,16 @@ import { connect } from 'react-redux';
 import { MainScreenTopHalf, MainScreenBottomHalf, CategoryTiles } from './common';
 import { searchTile } from '../actions';
 import { Actions } from 'react-native-router-flux';
-import { fetchRecipesBalanced, fetchRecipes, quickRecipes, highProteinRecipes, highFatRecipes, veganRecipes } from '../actions';
+import { fetchRecipesBalanced, fetchRecipes, quickRecipes, highProteinRecipes, highFatRecipes, veganRecipes, ifUserLoggedIn } from '../actions';
 
 class MainScreen extends Component {
 
+  componentWillMount() {
+    this.props.ifUserLoggedIn()
+  }
+
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     return (
       <View style={styles.container}>
 
@@ -125,4 +129,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default connect (null, { fetchRecipes, fetchRecipesBalanced, quickRecipes, highProteinRecipes, highFatRecipes, veganRecipes }) (MainScreen);
+export default connect (null, { fetchRecipes, fetchRecipesBalanced, quickRecipes, highProteinRecipes, highFatRecipes, veganRecipes, ifUserLoggedIn }) (MainScreen);

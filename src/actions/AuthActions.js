@@ -1,5 +1,5 @@
 import firebase from 'firebase';
-import { EMAIL_CHANGED, PASSWORD_CHANGED, LOGIN_USER_SUCCESS, LOGIN_USER_FAIL, LOGIN_USER } from './types';
+import { EMAIL_CHANGED, PASSWORD_CHANGED, LOGIN_USER_SUCCESS, LOGIN_USER_FAIL, LOGIN_USER, IF_USER_LOGGED_IN } from './types';
 import { Actions } from 'react-native-router-flux';
 
 
@@ -47,3 +47,19 @@ const loginUserSuccess = (dispatch, user) => {
 
 	Actions.MainScreen();
 };
+
+export const ifUserLoggedIn = () => {
+	console.log("Got to user login condition");
+	return(dispatch) => {
+		dispatch({type: IF_USER_LOGGED_IN})
+		firebase.auth().onAuthStateChanged((user) => {
+			if(user) {
+				console.log('user is logged in');
+				console.log(user);
+			}
+			else {
+				console.log('Go to the login Page');
+			}
+		})
+	}
+}

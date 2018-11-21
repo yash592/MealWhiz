@@ -25,7 +25,7 @@ const RouterComponent = () => {
 				<Scene
 					hideNavBar={true}
 					key='login'
-					component={LoginForm}
+					component={MainScreen}
 					 initial />
 			 </Scene>
 
