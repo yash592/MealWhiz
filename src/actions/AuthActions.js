@@ -58,7 +58,7 @@ export const ifUserLoggedIn = () => {
 				console.log(user);
 			}
 			else {
-				console.log('Go to the login Page');
+				console.log('User is not logged in');
 			}
 		})
 	}

@@ -9,6 +9,7 @@ import { fetchRecipesBalanced, fetchRecipes, quickRecipes, highProteinRecipes, h
 class MainScreen extends Component {
 
   componentWillMount() {
+    console.log('mounted');
     this.props.ifUserLoggedIn()
   }
 
@@ -97,7 +98,7 @@ class MainScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     // backgroundColor: '#F1F2EC',
-    backgroundColor: '#FFCCBC',
+    backgroundColor: '#E3EBFF',
     flex: 1
   },
   topHalf: {

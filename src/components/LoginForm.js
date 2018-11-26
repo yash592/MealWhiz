@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, loginUser } from '../actions';
 import { Card, CardSection, Input, Spinner, MainScreenTopHalf, MainScreenBottomHalf } from './common';
 import { FormLabel, FormInput, FormValidationMessage, Button } from 'react-native-elements'
+import { LinearGradient } from 'expo';
 
 // Login Form component
 
@@ -50,7 +51,7 @@ class LoginForm extends Component {
 		return (
 			<Button
 				onPress={this.onButtonPress.bind(this)}
-				medium
+				small
 				raised
 				backgroundColor='#8BC34A'
   			title='Sign In' />
@@ -64,7 +65,7 @@ class LoginForm extends Component {
 		return (
 
 			<KeyboardAwareScrollView
-				      style={{ backgroundColor: '#ff8a65' }}
+				      // style={{ backgroundColor: '#B5FFE9' }}
 				      resetScrollToCoords={{ x: 0, y: 0 }}
 				      contentContainerStyle={styles.container}
 				      scrollEnabled={false}>
@@ -76,6 +77,7 @@ class LoginForm extends Component {
 							source={require('./assets/brocolly.png')}
 						/>
 					</View>
+						<View style={{flex:1, marginTop: 200}}>
 								<FormInput
 									placeholder='user@email.com'
 									inputStyle={styles.email}
@@ -90,6 +92,7 @@ class LoginForm extends Component {
 									onChangeText={this.onPasswordChange.bind(this)}
 									value={this.props.password}
 								/>
+							</View>
 
 						{this.renderError()}
 
@@ -98,6 +101,7 @@ class LoginForm extends Component {
 
 
 			</KeyboardAwareScrollView>
+
 		);
 	};
 }
@@ -109,11 +113,10 @@ const styles = {
 		alignSelf: 'center'
 	},
 	email: {
-		color: 'white',
-		fontSize: 30
+		color: '#8BC34A'
 	},
 	password: {
-		color: 'white'
+		color: '#8BC34A'
 	}
 }
 
