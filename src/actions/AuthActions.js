@@ -56,9 +56,11 @@ export const ifUserLoggedIn = () => {
 			if(user) {
 				console.log('user is logged in');
 				console.log(user);
+
 			}
 			else {
 				console.log('User is not logged in');
+				Actions.LoginForm();
 			}
 		})
 	}
