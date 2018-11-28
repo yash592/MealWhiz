@@ -6,6 +6,7 @@ import SearchRecipes from './components/SearchRecipes';
 import MainScreen from './components/MainScreen';
 import SearchRecipesByCals from './components/SearchRecipesByCals';
 import SavedRecipes from './components/SavedRecipes'
+import SplashScreen from './components/SplashScreen'
 
 // <Scene key='auth'>
 // <Scene
@@ -23,7 +24,7 @@ const RouterComponent = () => {
 					<Scene
 						hideNavBar={true}
 						key='login'
-						component={MainScreen}
+						component={SplashScreen}
 						 initial
 				  />
 			 </Scene>

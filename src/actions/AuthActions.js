@@ -56,6 +56,7 @@ export const ifUserLoggedIn = () => {
 			if(user) {
 				console.log('user is logged in');
 				console.log(user);
+				Actions.MainScreen();
 
 			}
 			else {
