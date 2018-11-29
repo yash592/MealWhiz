@@ -64,6 +64,12 @@ class LoginForm extends Component {
 	render() {
 		return (
 
+			<LinearGradient
+	      style={styles.mainContent}
+	      colors={['#E3EBFF', '#B0EBB4']}
+	      start={{x: 0, y: .05}} end={{x: .1, y: 1}}
+	    >
+
 			<KeyboardAwareScrollView
 				      // style={{ backgroundColor: '#B5FFE9' }}
 				      resetScrollToCoords={{ x: 0, y: 0 }}
@@ -101,12 +107,18 @@ class LoginForm extends Component {
 
 
 			</KeyboardAwareScrollView>
+			</LinearGradient>
 
 		);
 	};
 }
 
 const styles = {
+	mainContent: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'space-around',
+  },
 	errorTextStyle: {
 		fontSize: 20,
 		color: 'red',

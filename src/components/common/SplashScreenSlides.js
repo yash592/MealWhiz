@@ -18,21 +18,21 @@ const splashScreenSlides = [
     text: 'Search Recipes by calories, search term and look for meals in a variety of different ways!',
     image: require('../assets/brocolly.png'),
 
-    colors: ['#E3EBFF', '#B0EBB4'],
+    colors: ['#E3EBFF', '#C6DD4E'],
   },
   {
     key: 'slideTwo',
     title: 'Save Recipes',
     text: 'Save your favorite recipes, add the ingredients needed to your shopping cart and share them on your favorite social networks!',
     image: require('../assets/brocolly.png'),
-    colors: ['#E3EBFF', '#B0EBB4'],
+    colors: ['#E3EBFF', '#FDE53D'],
   },
   {
     key: 'slideThree',
     title: 'titleThree',
     text: 'This is screen three',
     image: require('../assets/brocolly.png'),
-    colors: ['#E3EBFF', '#B0EBB4'],
+    colors: ['#E3EBFF', '#FEB834'],
   },
 ];
 

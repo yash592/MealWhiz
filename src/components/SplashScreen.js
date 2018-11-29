@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '70%',
     height: "80%",
+    opacity: 0.9
   },
   logo: {
     height: '40%',
@@ -94,6 +95,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 10
 
   },
   text: {

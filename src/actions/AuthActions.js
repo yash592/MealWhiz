@@ -2,7 +2,7 @@ import firebase from 'firebase';
 import { EMAIL_CHANGED, PASSWORD_CHANGED, LOGIN_USER_SUCCESS, LOGIN_USER_FAIL, LOGIN_USER, IF_USER_LOGGED_IN } from './types';
 import { Actions } from 'react-native-router-flux';
 
-
+// Action creators for textIputs
 export const emailChanged = (text) => {
 	return {
 		type: EMAIL_CHANGED,
@@ -18,7 +18,7 @@ export const passwordChanged = (text) => {
 };
 
 
-
+//
 export const loginUser = ({ email, password }) => {
 	// console.log("Got here")
   return (dispatch) => {
@@ -53,16 +53,7 @@ export const ifUserLoggedIn = () => {
 	return(dispatch) => {
 		dispatch({type: IF_USER_LOGGED_IN})
 		firebase.auth().onAuthStateChanged((user) => {
-			if(user) {
-				console.log('user is logged in');
-				console.log(user);
-				Actions.MainScreen();
-
-			}
-			else {
-				console.log('User is not logged in');
-				Actions.LoginForm();
-			}
+			user ? Actions.MainScreen() : Actions.LoginForm()
 		})
 	}
 }
