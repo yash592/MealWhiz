@@ -79,18 +79,22 @@ const styles = StyleSheet.create({
   mainContent: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'space-around',
+    display: 'flex',
+    justifyContent: 'center',
   },
   image: {
-    flex: 1,
-    width: '70%',
-    height: "80%",
-    opacity: 0.9
+    flex: 0.7,
+    width: '100%',
+    height: "100%",
+    opacity: 0.9,
+    alignItems: 'center',
+    resizeMode: 'contain'
   },
   logo: {
-    height: '40%',
+    // flex: 1,
+    height: '30%',
     width: '100%',
-    // backgroundColor: '#FCEBBF',
+    backgroundColor: '#FCEBBF',
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',

@@ -65,7 +65,7 @@ export const fetchRecipes = ( recipeSearchTerm ) => {
 
 export const fetchRecipesByCals = (min, max) => {
 	console.log('Got to fetchRecipesByCals action');
-	let url = `https://api.edamam.com/search?q=&app_id=${appId}&app_key=${appKey}&from=0&to=20&calories=${min}-${max}`
+	let url = `https://api.edamam.com/search?q=&app_id=${appId}&app_key=${appKey}&from=0&to=40&calories=${min}-${max}`
 	// console.log(url);
 	return(dispatch) => {
 		return axios.get(url)

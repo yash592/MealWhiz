@@ -29,8 +29,8 @@ const splashScreenSlides = [
   },
   {
     key: 'slideThree',
-    title: 'titleThree',
-    text: 'This is screen three',
+    title: 'Share your recipes!',
+    text: 'Share your saved recipes on your favorite social media websites!',
     image: require('../assets/brocolly.png'),
     colors: ['#E3EBFF', '#FEB834'],
   },
