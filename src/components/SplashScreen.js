@@ -7,6 +7,7 @@ import AppIntroSlider from 'react-native-app-intro-slider';
 import { splashScreenSlides } from './common/SplashScreenSlides';
 import { MainScreenTopHalf, MainScreenBottomHalf, CategoryTiles } from './common';
 import { ifUserLoggedIn } from '../actions';
+import { Font } from 'expo';
 
 const style = StyleSheet.create({
   image: {
@@ -19,21 +20,19 @@ const style = StyleSheet.create({
 });
 
 
-const slides = [
-  {
-    key: 'slideOne',
-    title: 'titleOne',
-    text: 'This is screen one',
-    image: require('./assets/brocolly.png'),
-    imageStyle: style.image,
-    colors: ['#E3EBFF', '#C0D14E'],
-  },
-]
 
 export class SplashScreen extends Component {
 
-  componentDidMount() {
+  state = {
+   fontLoaded: false,
+ };
+
+  async componentDidMount() {
     console.log(this.props);
+    await Font.loadAsync({
+     'Montserrat': require("./assets/fonts/Montserrat-Medium.ttf"),
+   });
+   this.setState({ fontLoaded: true });
   }
 
   _renderItem = props => (
@@ -50,7 +49,7 @@ export class SplashScreen extends Component {
       <Ionicons style={{ backgroundColor: 'transparent' }} size={200} color="white" />
       <View>
         <View style={styles.logo}>
-          <ImageBackground source={props.image} style={styles.image} />
+          <ImageBackground source={props.image} style={styles.image} resizeMode='contain' />
         </View>
         <Text style={styles.title}>{props.title}</Text>
         <Text style={styles.text}>{props.text}</Text>
@@ -59,18 +58,21 @@ export class SplashScreen extends Component {
   );
 
   _onDone = () => {
+    console.log('skipped');
     this.props.ifUserLoggedIn()
   }
 
 
-
   render() {
     return (
-      <AppIntroSlider
+      this.state.fontLoaded ? <AppIntroSlider
         slides ={splashScreenSlides}
         renderItem={this._renderItem}
         onDone={this._onDone}
-     />
+        showSkipButton
+        onSkip={this._onDone}
+        dotStyle={{backgroundColor: '#223480'}}
+     /> : null
     )
   }
 }
@@ -83,18 +85,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
-    flex: 0.7,
+    flex: 1,
     width: '100%',
     height: "100%",
     opacity: 0.9,
     alignItems: 'center',
-    resizeMode: 'contain'
+    // resizeMode: 'contain'
   },
   logo: {
     // flex: 1,
     height: '30%',
     width: '100%',
-    backgroundColor: '#FCEBBF',
+    // backgroundColor: '#FCEBBF',
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',
@@ -104,13 +106,16 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'black',
-    backgroundColor: 'transparent',
+    fontSize: 16,
+    // backgroundColor: 'transparent',
     textAlign: 'center',
+    fontFamily: 'Montserrat',
     paddingHorizontal: 16,
   },
   title: {
     fontSize: 22,
     color: 'black',
+    fontFamily:  'Montserrat',
     backgroundColor: 'transparent',
     textAlign: 'center',
     marginBottom: 16,

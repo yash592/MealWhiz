@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { recipeSave, fetchSavedRecipes } from '../actions';
 
 import { Actions } from 'react-native-router-flux';
-import { Text, TouchableWithoutFeedback, View, Image } from 'react-native';
+import { Text, TouchableWithoutFeedback, View, Image, CameraRoll } from 'react-native';
 import { Tile } from 'react-native-elements';
 
 
@@ -17,15 +17,13 @@ class ListItemTile extends Component {
       const  thumbnail  = this.props.avatar;
       // this.props.recipeSave({ title, thumbnail })
       this.props.fetchSavedRecipes();
-    }
+  }
 
 
   render() {
     const  title  = this.props.title;
     const  thumbnail  = this.props.avatar;
     // console.log(this.props)
-
-
 
     return (
       <View style={{flexDirection: 'row', flex: 1, backgroundColor: '#FFCCBC'}}>

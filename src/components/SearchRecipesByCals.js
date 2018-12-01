@@ -32,6 +32,7 @@ class SearchRecipesByCals extends Component {
         <FormLabel>Min Calories</FormLabel>
         <FormInput
           label='minCal'
+          keyboardType='numeric'
           placeholder='Enter the minimum number of calories'
           onChangeText={this.recipeCalsTextMin.bind(this)}
           value={this.props.recipeCalsTextMin}
@@ -39,6 +40,7 @@ class SearchRecipesByCals extends Component {
         <FormLabel>Max calories</FormLabel>
         <FormInput
           label='maxCal'
+          keyboardType='numeric'
           placeholder='Enter the maximum number of calories'
           onChangeText={this.recipeCalsTextMax.bind(this)}
           value={this.props.recipeCalsTextMax}

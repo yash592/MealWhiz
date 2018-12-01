@@ -23,18 +23,20 @@ class FetchRecipes extends Component {
   	}
 
 		_renderItem = ({ item }) => (
-			 // console.log(item)
+
 			<ListItemTile
 				title={item.recipe.label}
 				avatar={item.recipe.image}
 		 	/>
+
+
 
 		)
 
 		_keyExtractor = (item, index) => item.recipe.calories
 
 		render() {
-		// console.log("Props", this.props.recipes);
+		// console.log("Recipes from mapState", this.props.recipes);
 		return (
 			<FlatList
 				data={this.props.recipes}
@@ -49,13 +51,8 @@ class FetchRecipes extends Component {
 
 
 const mapStateToProps = state => {
-	// console.log(state);
-	// return {
-	// 	recipeSearchTerm: state.recipeSearch.recipeSearchTerm
-	// }
-
-	const recipes = _.map(state.recipe, (meals) => {
-		return { ... meals }
+	const recipes = _.map(state.recipe, (list) => {
+		return { ...list }
 	})
 	return { recipes }
 };
