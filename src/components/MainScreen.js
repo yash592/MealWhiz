@@ -4,14 +4,25 @@ import { connect } from 'react-redux';
 import { MainScreenTopHalf, MainScreenBottomHalf, CategoryTiles } from './common';
 import { searchTile } from '../actions';
 import { Actions } from 'react-native-router-flux';
+import { Font } from 'expo';
 import { fetchRecipesBalanced, fetchRecipes, quickRecipes, highProteinRecipes, highFatRecipes, veganRecipes, ifUserLoggedIn } from '../actions';
 
 class MainScreen extends Component {
 
-  componentWillMount() {
+  state = {
+   fontLoaded: false,
+ };
+
+  async componentDidMount() {
     console.log('mounted');
     this.props.ifUserLoggedIn()
+    // console.log(this.props);
+    await Font.loadAsync({
+     'Ubuntu': require("./assets/fonts/Ubuntu-Regular.ttf"),
+   });
+   this.setState({ fontLoaded: true });
   }
+
 
   render() {
     // console.log(this.props)
@@ -125,7 +136,8 @@ const styles = StyleSheet.create({
     flex: 0.3,
     position: 'relative',
     margin: 5,
-    color: 'red'
+    color: 'black',
+    fontFamily: 'Ubuntu',
   }
 
 })

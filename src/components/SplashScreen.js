@@ -23,14 +23,15 @@ const style = StyleSheet.create({
 
 export class SplashScreen extends Component {
 
+
   state = {
    fontLoaded: false,
  };
 
-  async componentDidMount() {
+  async componentWillMount() {
     console.log(this.props);
     await Font.loadAsync({
-     'Montserrat': require("./assets/fonts/Montserrat-Medium.ttf"),
+     'Ubuntu': require("./assets/fonts/Ubuntu-Regular.ttf"),
    });
    this.setState({ fontLoaded: true });
   }
@@ -70,6 +71,7 @@ export class SplashScreen extends Component {
         renderItem={this._renderItem}
         onDone={this._onDone}
         showSkipButton
+        buttonTextStyle={{color: '#223480'}}
         onSkip={this._onDone}
         dotStyle={{backgroundColor: '#223480'}}
      /> : null
@@ -109,13 +111,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     // backgroundColor: 'transparent',
     textAlign: 'center',
-    fontFamily: 'Montserrat',
+    fontFamily: 'Ubuntu',
     paddingHorizontal: 16,
   },
   title: {
     fontSize: 22,
     color: 'black',
-    fontFamily:  'Montserrat',
+    fontFamily:  'Ubuntu',
     backgroundColor: 'transparent',
     textAlign: 'center',
     marginBottom: 16,

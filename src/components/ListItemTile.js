@@ -7,9 +7,22 @@ import { recipeSave, fetchSavedRecipes } from '../actions';
 import { Actions } from 'react-native-router-flux';
 import { Text, TouchableWithoutFeedback, View, Image, CameraRoll } from 'react-native';
 import { Tile } from 'react-native-elements';
+import { Font } from 'expo';
 
 
 class ListItemTile extends Component {
+
+  state = {
+   fontLoaded: false,
+ };
+
+  async componentWillMount() {
+    console.log(this.props);
+    await Font.loadAsync({
+     'Ubuntu': require("./assets/fonts/Ubuntu-Regular.ttf"),
+   });
+   this.setState({ fontLoaded: true });
+  }
 
   onLikePress() {
       console.log('recipe save button clicked');
@@ -53,7 +66,8 @@ const styles = {
   textStyle: {
     margin: 5,
     flex: 1,
-    color: '#fd5523'
+    color: 'black',
+    fontFamily: 'Ubuntu',
   }
 }
 
