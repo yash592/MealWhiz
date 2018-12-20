@@ -37,7 +37,9 @@ class LoginForm extends Component {
 	}
 
 	onGoogleButtonPress() {
+
 		this.props.googleSignIn()
+
 
 
 	}
