@@ -6,6 +6,7 @@ import SearchRecipes from './components/SearchRecipes';
 import MainScreen from './components/MainScreen';
 import SearchRecipesByCals from './components/SearchRecipesByCals';
 import SavedRecipes from './components/SavedRecipes'
+import SplashScreen from './components/SplashScreen'
 
 // <Scene key='auth'>
 // <Scene
@@ -15,18 +16,17 @@ import SavedRecipes from './components/SavedRecipes'
 // 	 initial />
 // 	 </Scene>
 
-
-
 const RouterComponent = () => {
 	return (
 		<Router>
 			<Scene key='root' hideNavBar>
 				<Scene key='auth'>
-				<Scene
-					hideNavBar={true}
-					key='login'
-					component={LoginForm}
-					 initial />
+					<Scene
+						hideNavBar={true}
+						key='login'
+						component={SplashScreen}
+						 initial
+				  />
 			 </Scene>
 
 				<Scene key='MainScreen'>
@@ -35,7 +35,14 @@ const RouterComponent = () => {
 						key='MainScreen'
 						component={MainScreen}
 						// title='Brocolly'
-
+					/>
+				</Scene>
+				<Scene key='LoginForm' back='false'>
+					<Scene
+						hideNavBar
+						key='LoginForm'
+						component={LoginForm}
+						// title='Brocolly'
 					/>
 				</Scene>
 
@@ -67,8 +74,6 @@ const RouterComponent = () => {
 					<Scene
 						key='FetchRecipes'
 						component={FetchRecipes}
-						// title='Results'
-						// hideNavBar={true}
 						back
 				 />
 			 	</Scene>
