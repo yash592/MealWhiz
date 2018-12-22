@@ -86,7 +86,6 @@ export const onGoogleSignIn = async () => {
 					return {error: true};
 		}
 
-
 }
 
 export const googleSignIn = () => {

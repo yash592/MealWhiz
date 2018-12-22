@@ -34,8 +34,13 @@ class ListItemTile extends Component {
 
 
   render() {
-    const  title  = this.props.title;
-    const  thumbnail  = this.props.avatar;
+    const title  = this.props.title;
+    const thumbnail  = this.props.image;
+    // const ingredients = this.props.ingredients
+    // const healthLabel = this.props.healthLabel
+    const calories = this.props.calories
+    // const servings = this.props.servings
+    console.log('calories', calories);
     // console.log(this.props)
 
     return (

@@ -1,9 +1,9 @@
 {
   "packagerPort": 19001,
-  "packagerPid": 26376,
-  "expoServerNgrokUrl": "https://jy-a39.yash592.mealwhiz.exp.direct",
-  "packagerNgrokUrl": "https://packager.jy-a39.yash592.mealwhiz.exp.direct",
-  "ngrokPid": 25144,
+  "packagerPid": 11808,
+  "expoServerNgrokUrl": "https://rg-gfr.yash592.mealwhiz.exp.direct",
+  "packagerNgrokUrl": "https://packager.rg-gfr.yash592.mealwhiz.exp.direct",
+  "ngrokPid": 15216,
   "devToolsPort": 19002,
-  "expoServerPort": 19000 
+  "expoServerPort": 19000
 }
