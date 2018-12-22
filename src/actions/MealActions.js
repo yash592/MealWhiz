@@ -215,3 +215,9 @@ export const fetchSavedRecipes = () => {
 
 	};
 }
+
+export const fetchRecipeDetail = ( title, thumbnail ) => {
+	return(dispatch) => {
+		console.log(title, thumbnail);
+	}
+}

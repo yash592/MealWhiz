@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {  Container } from './common';
 import { CardSection, RecipeTile } from './common';
 import { connect } from 'react-redux';
-import { recipeSave, fetchSavedRecipes } from '../actions';
+import { recipeSave, fetchSavedRecipes, fetchRecipeDetail } from '../actions';
 
 import { Actions } from 'react-native-router-flux';
 import { Text, TouchableWithoutFeedback, View, Image, CameraRoll } from 'react-native';
@@ -27,9 +27,9 @@ class ListItemTile extends Component {
   onLikePress() {
       console.log('recipe save button clicked');
       const  title  = this.props.title;
-      const  thumbnail  = this.props.avatar;
+      const  thumbnail  = this.props.image;
       // this.props.recipeSave({ title, thumbnail })
-      this.props.fetchSavedRecipes();
+      this.props.fetchRecipeDetail({title, thumbnail});
   }
 
 
@@ -40,7 +40,7 @@ class ListItemTile extends Component {
     // const healthLabel = this.props.healthLabel
     const calories = this.props.calories
     // const servings = this.props.servings
-    console.log('calories', calories);
+    // console.log('calories', calories);
     // console.log(this.props)
 
     return (
@@ -77,4 +77,4 @@ const styles = {
 }
 
 
-export default connect(null, { recipeSave, fetchSavedRecipes } ) (ListItemTile);
+export default connect(null, { recipeSave, fetchSavedRecipes, fetchRecipeDetail } ) (ListItemTile);
