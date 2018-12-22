@@ -15,13 +15,13 @@ class SearchRecipes extends Component {
 
 	onSearch() {
 		const { recipeSearchTerm } = this.props;
-		console.log(recipeSearchTerm, "from search button")
+		// console.log(recipeSearchTerm, "from search button")
 		this.props.fetchRecipes(recipeSearchTerm);
 	}
 
 
 	render() {
-		console.log(this.props)
+		// console.log(this.props)
 		return (
 			<View>
 					<FormLabel>Recipe</FormLabel>
@@ -31,7 +31,7 @@ class SearchRecipes extends Component {
 						onChangeText={this.recipeSearchTerm.bind(this)}
 						value={this.props.recipeSearchTerm}
 					/>
-					
+
 					<Button
 						title='Search'
 						color='white'

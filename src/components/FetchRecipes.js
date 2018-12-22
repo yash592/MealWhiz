@@ -14,29 +14,21 @@ import { List, ListItem, SearchBar } from "react-native-elements";
 
 class FetchRecipes extends Component {
 
-	renderRow = (recipe) => {
-		console.log('Tot to renderRow')
-		console.log(recipe)
-  		return <ListItemColumn
-  				 recipe={recipe}
-  				  />
-  	}
-
 		_renderItem = ({ item }) => (
-
 			<ListItemTile
 				title={item.recipe.label}
-				avatar={item.recipe.image}
+				image={item.recipe.image}
+				ingredients={item.recipe.ingredientLines}
+				healthLabel={item.recipe.healthLabels}
+				calories={item.recipe.totalNutrients.ENERC_KCAL.quantity}
+				servings={item.recipe.yield}
 		 	/>
-
-
-
 		)
 
 		_keyExtractor = (item, index) => item.recipe.calories
 
 		render() {
-		// console.log("Recipes from mapState", this.props.recipes);
+		// console.log("Recipes from mapState", recipe.label);
 		return (
 			<FlatList
 				data={this.props.recipes}
@@ -44,7 +36,6 @@ class FetchRecipes extends Component {
 				keyExtractor={this._keyExtractor}
 				numColumns='2'
 			 />
-
 		);
 	}
 }
@@ -54,11 +45,8 @@ const mapStateToProps = state => {
 	const recipes = _.map(state.recipe, (list) => {
 		return { ...list }
 	})
+	// console.log('mapstatetoprops',  recipes);
 	return { recipes }
 };
-
-
-
-
 
 export default connect( mapStateToProps, { fetchRecipes, searchTermChange, recipeSave })(FetchRecipes);

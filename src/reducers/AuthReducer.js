@@ -9,7 +9,7 @@ const INITIAL_STATE = {
 	 };
 
 export default (state = INITIAL_STATE, action) => {
-	console.log('Got to reducer', action);
+	// console.log('Got to reducer', action);
 	switch (action.type) {
 		case EMAIL_CHANGED:
 			return { ...state, email: action.payload };

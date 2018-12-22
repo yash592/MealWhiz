@@ -85,7 +85,7 @@ export const fetchRecipesByCals = (min, max) => {
 export const fetchRecipesBalanced = () => {
 	console.log('Got to balanced cals');
 	let url = `https://api.edamam.com/search?q=rice&app_id=${appId}&app_key=${appKey}&from=0&to=20&diet=balanced`
-	// console.log(url);
+	console.log(url);
 	return(dispatch) => {
 		return axios.get(url)
 			.then(response => {

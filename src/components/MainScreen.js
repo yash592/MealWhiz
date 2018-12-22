@@ -15,8 +15,8 @@ class MainScreen extends Component {
 
   async componentDidMount() {
     console.log('mounted');
-    // this.props.ifUserLoggedIn()
-    console.log(this.props);
+    this.props.ifUserLoggedIn()
+    // console.log(this.props);
     await Font.loadAsync({
      'Ubuntu': require("./assets/fonts/Ubuntu-Regular.ttf"),
    });
