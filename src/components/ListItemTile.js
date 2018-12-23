@@ -28,16 +28,17 @@ class ListItemTile extends Component {
       console.log('recipe save button clicked');
       const  title  = this.props.title;
       const  thumbnail  = this.props.image;
+      const ingredients = this.props.ingredients;
       console.log('onlikepress', title, thumbnail);
       // this.props.recipeSave({ title, thumbnail })
-      this.props.fetchRecipeDetail({title, thumbnail});
+      this.props.fetchRecipeDetail({title, thumbnail, ingredients});
   }
 
 
   render() {
     const title  = this.props.title;
     const thumbnail  = this.props.image;
-    // const ingredients = this.props.ingredients
+    const ingredients = this.props.ingredients
     // const healthLabel = this.props.healthLabel
     const calories = this.props.calories
     // const servings = this.props.servings
