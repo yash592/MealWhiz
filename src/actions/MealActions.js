@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_RECIPE, FETCH_RECIPE_QUICK, SEARCHTERM_CHANGE, SEARCH_TILE, SEARCHCALORIE_CHANGE_MIN, SEARCHCALORIE_CHANGE_MAX, FETCH_RECIPE_CAL, FETCH_RECIPE_BALANCED, QUICK_RECIPE, HIGH_PROTEIN_RECIPE, HIGH_FAT_RECIPE, VEGAN_RECIPE, RECIPE_CREATE, SAVE_RECIPE, FETCH_SAVED_RECIPES } from './types';
+import { FETCH_RECIPE, FETCH_RECIPE_QUICK, SEARCHTERM_CHANGE, SEARCH_TILE, SEARCHCALORIE_CHANGE_MIN, SEARCHCALORIE_CHANGE_MAX, FETCH_RECIPE_CAL, FETCH_RECIPE_BALANCED, QUICK_RECIPE, HIGH_PROTEIN_RECIPE, HIGH_FAT_RECIPE, VEGAN_RECIPE, RECIPE_CREATE, SAVE_RECIPE, FETCH_SAVED_RECIPES, FETCH_RECIPE_DETAIL } from './types';
 import { Actions } from 'react-native-router-flux';
 import firebase from 'firebase';
 
@@ -216,8 +216,14 @@ export const fetchSavedRecipes = () => {
 	};
 }
 
-export const fetchRecipeDetail = ( title, thumbnail ) => {
+export const  fetchRecipeDetail =  ( title, thumbnail ) => {
 	return(dispatch) => {
-		console.log(title, thumbnail);
+
+				dispatch({
+					type: FETCH_RECIPE_DETAIL,
+					payload: title
+				})
+				Actions.RecipeDetail();
+
 	}
 }

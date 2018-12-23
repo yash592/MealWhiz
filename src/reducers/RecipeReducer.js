@@ -1,4 +1,4 @@
-import { FETCH_RECIPE, SEARCH_TILE, FETCH_RECIPE_CAL, FETCH_RECIPE_QUICK } from '../actions/types';
+import { FETCH_RECIPE, SEARCH_TILE, FETCH_RECIPE_CAL, FETCH_RECIPE_QUICK, FETCH_RECIPE_DETAIL } from '../actions/types';
 
 const initialState = {
 	meals: '',

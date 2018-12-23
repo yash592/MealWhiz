@@ -7,6 +7,7 @@ export const LOGIN_USER = 'login_user';
 export const GOOGLE_LOGIN_USER = 'google_login_user'
 export const GOOGLE_LOGIN_USER_SUCCESS = 'google_login_user_success'
 export const FETCH_RECIPE = 'fetch_recipe';
+export const FETCH_RECIPE_DETAIL = 'fetch_recipe_detail'
 export const FETCH_RECIPE_CAL = 'fetch_recipe_cal';
 export const FETCH_RECIPE_BALANCED = 'fetch_recipe_BALANCED';
 export const FETCH_RECIPE_QUICK = 'fetch_recipe_quick';
