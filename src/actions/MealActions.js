@@ -216,7 +216,7 @@ export const fetchSavedRecipes = () => {
 	};
 }
 
-export const  fetchRecipeDetail =  ( title, thumbnail ) => {
+export const  fetchRecipeDetail =  ( title, thumbnail, ingredients ) => {
 	return(dispatch) => {
 
 				dispatch({

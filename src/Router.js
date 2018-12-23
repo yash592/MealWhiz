@@ -75,7 +75,7 @@ const RouterComponent = () => {
 						key='RecipeDetail'
 						component={RecipeDetail}
 						// title='Search Recipes by Calories'
-						back
+						// back
 				 />
 			 	</Scene>
 
