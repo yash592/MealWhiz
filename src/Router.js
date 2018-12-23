@@ -7,6 +7,7 @@ import MainScreen from './components/MainScreen';
 import SearchRecipesByCals from './components/SearchRecipesByCals';
 import SavedRecipes from './components/SavedRecipes'
 import SplashScreen from './components/SplashScreen'
+import RecipeDetail from './components/RecipeDetail'
 
 // <Scene key='auth'>
 // <Scene
@@ -66,6 +67,14 @@ const RouterComponent = () => {
 						key='SavedRecipes'
 						component={SavedRecipes}
 						title='Search Recipes by Calories'
+						back
+				 />
+			 	</Scene>
+				<Scene key="RecipeDetail">
+					<Scene
+						key='RecipeDetail'
+						component={RecipeDetail}
+						// title='Search Recipes by Calories'
 						back
 				 />
 			 	</Scene>

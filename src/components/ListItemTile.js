@@ -28,6 +28,7 @@ class ListItemTile extends Component {
       console.log('recipe save button clicked');
       const  title  = this.props.title;
       const  thumbnail  = this.props.image;
+      console.log('onlikepress', title, thumbnail);
       // this.props.recipeSave({ title, thumbnail })
       this.props.fetchRecipeDetail({title, thumbnail});
   }
