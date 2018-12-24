@@ -24,14 +24,14 @@ const style = StyleSheet.create({
 export class SplashScreen extends Component {
 
 
-  state = {
+state = {
    fontLoaded: false,
  };
 
   async componentWillMount() {
     console.log(this.props);
     await Font.loadAsync({
-     'Ubuntu': require("./assets/fonts/Ubuntu-Regular.ttf"),
+     'Ubuntu': require("./assets/fonts/Roboto-Regular.ttf"),
    });
    this.setState({ fontLoaded: true });
   }
@@ -66,15 +66,15 @@ export class SplashScreen extends Component {
 
   render() {
     return (
-      this.state.fontLoaded ? <AppIntroSlider
+      this.state.fontLoaded ?
+        <AppIntroSlider
         slides ={splashScreenSlides}
         renderItem={this._renderItem}
         onDone={this._onDone}
         showSkipButton
         buttonTextStyle={{color: '#223480'}}
         onSkip={this._onDone}
-        dotStyle={{backgroundColor: '#223480'}}
-     /> : null
+        dotStyle={{backgroundColor: '#223480'}} /> : null
     )
   }
 }
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'black',
-    fontSize: 16,
+    fontSize: 18,
     // backgroundColor: 'transparent',
     textAlign: 'center',
     fontFamily: 'Ubuntu',

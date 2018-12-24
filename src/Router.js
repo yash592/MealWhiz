@@ -73,6 +73,7 @@ const RouterComponent = () => {
 				<Scene key="RecipeDetail">
 					<Scene
 						key='RecipeDetail'
+						hideNavBar
 						component={RecipeDetail}
 						// title='Search Recipes by Calories'
 						// back

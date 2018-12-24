@@ -99,7 +99,7 @@ export const fetchRecipesBalanced = () => {
 
 export const quickRecipes = () => {
 	console.log('Got to quick recipes');
-	let url = `https://api.edamam.com/search?q=chicken&app_id=${appId}&app_key=${appKey}&from=0&to=20&time=20`
+	let url = `https://api.edamam.com/search?q=dinner&app_id=${appId}&app_key=${appKey}&from=0&to=20&time=20`
 	// console.log(url);
 	return(dispatch) => {
 		return axios.get(url)
@@ -216,13 +216,14 @@ export const fetchSavedRecipes = () => {
 	};
 }
 
-export const  fetchRecipeDetail =  ( title, thumbnail, ingredients ) => {
+export const  fetchRecipeDetail =  ( title, thumbnail, ingredients, healthLabel, calories, servings ) => {
 	return(dispatch) => {
 
 				dispatch({
 					type: FETCH_RECIPE_DETAIL,
-					payload: title
+					payload: title, thumbnail
 				})
+				// console.log(payload);
 				Actions.RecipeDetail();
 
 	}
