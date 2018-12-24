@@ -26,12 +26,15 @@ class ListItemTile extends Component {
 
   onLikePress() {
       console.log('recipe save button clicked');
-      const  title  = this.props.title;
-      const  thumbnail  = this.props.image;
-      const ingredients = this.props.ingredients;
+      const title  = this.props.title;
+      const thumbnail  = this.props.image;
+      const ingredients = this.props.ingredients
+      const healthLabel = this.props.healthLabel
+      const calories = this.props.calories
+      const servings = this.props.servings
       console.log('onlikepress', title, thumbnail);
       // this.props.recipeSave({ title, thumbnail })
-      this.props.fetchRecipeDetail({title, thumbnail, ingredients});
+      this.props.fetchRecipeDetail({title, thumbnail, ingredients, healthLabel, calories, servings});
   }
 
 
@@ -39,9 +42,9 @@ class ListItemTile extends Component {
     const title  = this.props.title;
     const thumbnail  = this.props.image;
     const ingredients = this.props.ingredients
-    // const healthLabel = this.props.healthLabel
+    const healthLabel = this.props.healthLabel
     const calories = this.props.calories
-    // const servings = this.props.servings
+    const servings = this.props.servings
     // console.log('calories', calories);
     // console.log(this.props)
 
