@@ -30,7 +30,7 @@ class MainScreen extends Component {
       <View style={styles.container}>
 
         <MainScreenTopHalf>
-            <Image source={require('./assets/brocolly.png')} style={styles.logo} />
+            <Image source={require('./assets/broccoli2.png')} style={styles.logo} />
         </MainScreenTopHalf>
 
         <MainScreenBottomHalf>
