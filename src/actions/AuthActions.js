@@ -72,7 +72,7 @@ export const onGoogleSignIn = async () => {
 		console.log('got to google login func')
 		try {
 					const result = await Expo.Google.logInAsync({
-						androidClientId: '573284368555-8uabjejjkern8sv1uuddi824er8cg3a2.apps.googleusercontent.com',
+						androidClientId: androidClientId,
 						scopes: ['profile', 'email'],
 					});
 					if (result.type === 'success') {
