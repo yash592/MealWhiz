@@ -45,7 +45,7 @@ const mapStateToProps = state => {
 	const recipes = _.map(state.recipe, (list) => {
 		return { ...list }
 	})
-	// console.log('mapstatetoprops',  recipes);
+	console.log('mapstatetoprops',  recipes);
 	return { recipes }
 };
 

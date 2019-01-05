@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchRecipeDetail } from '../actions';
-import { View, Text, Image, FlatList } from 'react-native';
+import { View, Text, Image, FlatList, ScrollView } from 'react-native';
 import _ from 'lodash';
 import { Font } from 'expo';
 
@@ -31,10 +31,10 @@ class RecipeDetail extends Component {
       this.state.fontLoaded ?
       <View style={{flexDirection: 'column', flex: 1, backgroundColor: '#F4F3F0'}}>
 
-        <Image source={{uri: thumbnail}} style={{width: '100%', height: '50%', borderWidth: 1, borderColor: 'black'}}/>
+        <Image source={{uri: thumbnail}} style={{width: '100%', height: '50%'}}/>
         <Text style={{flex: 1, fontFamily: 'SourceSansPro', fontSize: 40, textShadowOffset:{width: -1, height: 1, textShadowRadius: 10}}}> {title} </Text>
-        <FlatList data={this.props.ingredients} renderItem={({item}) => <Text>{item}</Text>} />
-        <Text> {healthLabel} </Text>
+        <FlatList data={this.props.healthLabel} horizontal renderItem={({item}) => <Text> #{healthLabel} </Text>} />
+        <FlatList data={this.props.ingredients} keyExtractor = {(item, index) => item.calories} renderItem={({item})  => <Text> O {item}</Text>} />
         <Text> {calories} </Text>
         <Text> {servings} </Text>
 
@@ -49,7 +49,7 @@ const mapStatetoProps = state => {
   return {
     title: state.recipeDetail.title,
     thumbnail: state.recipeDetail.thumbnail,
-    ingredients: state.recipeDetail.ingredients.map((el) =>  el),
+    ingredients: state.recipeDetail.ingredients,
     healthLabel: state.recipeDetail.healthLabel,
     calories: state.recipeDetail.calories,
     servings: state.recipeDetail.servings
