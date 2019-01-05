@@ -100,7 +100,7 @@ export const fetchRecipesBalanced = () => {
 export const quickRecipes = () => {
 	console.log('Got to quick recipes');
 	let url = `https://api.edamam.com/search?q=dinner&app_id=${appId}&app_key=${appKey}&from=0&to=20&time=20`
-	// console.log(url);
+	console.log(url);
 	return(dispatch) => {
 		return axios.get(url)
 			.then(response => {

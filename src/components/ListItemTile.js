@@ -49,7 +49,7 @@ class ListItemTile extends Component {
     // console.log(this.props)
 
     return (
-      <View style={{flexDirection: 'row', flex: 1, backgroundColor: 'white'}}>
+      <View style={{flexDirection: 'column', flex: 1, backgroundColor: 'white'}}>
         <RecipeTile onPress={() => this.onLikePress()}>
   					<Image
   							style={styles.imgStyle}
