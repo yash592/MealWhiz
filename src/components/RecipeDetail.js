@@ -37,7 +37,6 @@ class RecipeDetail extends Component {
         <FlatList data={this.props.ingredients} keyExtractor = {(item, index) => item.calories} renderItem={({item})  => <Text> O {item}</Text>} />
         <Text> {calories} </Text>
         <Text> {servings} </Text>
-
       </View> : null
 
     )
