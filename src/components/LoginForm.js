@@ -91,14 +91,14 @@ class LoginForm extends Component {
 					onPress={this.onButtonPress.bind(this)}
 					small
 					raised
-					backgroundColor='#4285F4'
+					backgroundColor='#64B5F6'
 	  			title='Sign In'
 			 />
 			 <Button
 					onPress={this.onGoogleButtonPress.bind(this)}
 					small
 					raised
-					backgroundColor='#4285F4'
+					backgroundColor='#64B5F6'
 	  			title='Sign In With Google' />
 			</View>
 		)
